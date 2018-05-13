@@ -9,7 +9,7 @@ using Android.OS;
 using SQLite;
 
 
-//data proberen, idk, maybe wel of niet werkend
+//Data met Items. Moet nog aangepast worden
 namespace Data_X
 {
     public class Data
@@ -18,15 +18,17 @@ namespace Data_X
         {
         }
 
+        //Maakt ID de primary key en autoincrement het meteen
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
+        //Rest van de items die we later ooit gaan aanpassen
         public string Name { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
     }
 }
 
-
+//Automatisch gemaakt door xamarin
 namespace App2.Droid
 {
     [Activity(Label = "App2", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

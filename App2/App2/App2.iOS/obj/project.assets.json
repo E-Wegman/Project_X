@@ -705,21 +705,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hicham\\.nuget\\packages\\": {}
+    "C:\\Users\\poket\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.iOS\\App2.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.iOS\\App2.iOS.csproj",
       "projectName": "App2.iOS",
-      "projectPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.iOS\\App2.iOS.csproj",
-      "packagesPath": "C:\\Users\\Hicham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.iOS\\obj\\",
+      "projectPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.iOS\\App2.iOS.csproj",
+      "packagesPath": "C:\\Users\\poket\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Hicham\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\poket\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
@@ -731,8 +736,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj": {
-              "projectPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj"
+            "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj": {
+              "projectPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj"
             }
           }
         }
