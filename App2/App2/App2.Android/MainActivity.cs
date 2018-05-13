@@ -6,6 +6,27 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using SQLite;
+
+
+//data proberen, idk, maybe wel of niet werkend
+namespace Data_X
+{
+    public class Data
+    {
+        public Data()
+        {
+        }
+
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
+
+        public string Name { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+}
+
 
 namespace App2.Droid
 {
