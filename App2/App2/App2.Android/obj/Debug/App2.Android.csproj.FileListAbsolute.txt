@@ -19,7 +19,6 @@ C:\Users\Hicham\source\repos\App2\App2\App2.Android\obj\Debug\res\layout\toolbar
 C:\Users\Hicham\source\repos\App2\App2\App2.Android\obj\Debug\res\values\styles.xml
 C:\Users\Hicham\source\repos\App2\App2\App2.Android\obj\Debug\R.cs.flag
 C:\Users\Hicham\source\repos\App2\App2\App2.Android\obj\Debug\uploadflags.txt
-C:\Users\Hicham\source\repos\App2\App2\App2.Android\bin\Debug\App2.Android.dll
 C:\Users\Hicham\.nuget\packages\xamarin.forms\2.5.0.280555\lib\MonoAndroid10\FormsViewGroup.dll
 C:\Users\Hicham\.nuget\packages\xamarin.forms\2.5.0.280555\lib\MonoAndroid10\Xamarin.Forms.Core.dll
 C:\Users\Hicham\.nuget\packages\xamarin.forms\2.5.0.280555\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll
@@ -70,3 +69,6 @@ C:\Users\Hicham\source\repos\App2\App2\App2.Android\obj\Debug\linksrc\FormsViewG
 C:\Users\Hicham\source\repos\App2\App2\App2.Android\obj\Debug\linksrc\Xamarin.Forms.Core.dll.mdb
 C:\Users\Hicham\source\repos\App2\App2\App2.Android\obj\Debug\linksrc\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Hicham\source\repos\App2\App2\App2.Android\obj\Debug\linksrc\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\Alex_\Documents\GitHub\Project_X\App2\App2\App2.Android\obj\Debug\App2.Android.csprojAssemblyReference.cache
+C:\Users\Alex_\Documents\GitHub\Project_X\App2\App2\App2.Android\obj\Debug\App2.Android.dll
+C:\Users\Alex_\Documents\GitHub\Project_X\App2\App2\App2.Android\obj\Debug\App2.Android.pdb

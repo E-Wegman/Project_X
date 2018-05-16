@@ -364,7 +364,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.0.0.446417"
+          "PCLStorage": "1.0.2",
+          "Xamarin.Forms": "3.0.0.446417",
+          "sqlite-net-pcl": "1.4.118"
         },
         "compile": {
           "bin/placeholder/App2.dll": {}
@@ -879,26 +881,21 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\poket\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+    "C:\\Users\\Alex_\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
       "projectName": "App2.Android",
-      "projectPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
-      "packagesPath": "C:\\Users\\poket\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\obj\\",
+      "projectPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
+      "packagesPath": "C:\\Users\\Alex_\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\poket\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Alex_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "monoandroid71"
@@ -910,8 +907,8 @@
       "frameworks": {
         "monoandroid71": {
           "projectReferences": {
-            "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj": {
-              "projectPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj"
+            "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj": {
+              "projectPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj"
             }
           }
         }
