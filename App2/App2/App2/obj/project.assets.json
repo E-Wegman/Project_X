@@ -711,27 +711,44 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\poket\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+=======
+    "C:\\Users\\Hicham\\.nuget\\packages\\": {},
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
       "projectName": "App2",
       "projectPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
       "packagesPath": "C:\\Users\\poket\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
+      "projectName": "App2",
+      "projectPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
+      "packagesPath": "C:\\Users\\Hicham\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\obj\\",
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\poket\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+=======
+        "C:\\Users\\Hicham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"

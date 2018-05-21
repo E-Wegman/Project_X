@@ -881,26 +881,43 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\poket\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+=======
+    "C:\\Users\\Hicham\\.nuget\\packages\\": {}
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
       "projectName": "App2.Android",
       "projectPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
       "packagesPath": "C:\\Users\\poket\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
+      "projectName": "App2.Android",
+      "projectPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
+      "packagesPath": "C:\\Users\\Hicham\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\obj\\",
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\poket\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+=======
+        "C:\\Users\\Hicham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
       ],
       "originalTargetFrameworks": [
         "monoandroid71"
@@ -912,8 +929,13 @@
       "frameworks": {
         "monoandroid71": {
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj": {
               "projectPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj"
+=======
+            "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj": {
+              "projectPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj"
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
             }
           }
         }

@@ -5,6 +5,10 @@
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)xamarin.forms\3.0.0.446417\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\3.0.0.446417\build\netstandard2.0\Xamarin.Forms.targets')" />
+<<<<<<< HEAD
     <Import Project="C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\netstandard.library\2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\netstandard.library\2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+=======
+    <Import Project="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\netstandard.library\2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('C:\Program Files\dotnet\sdk\NuGetFallbackFolder\netstandard.library\2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
   </ImportGroup>
 </Project>

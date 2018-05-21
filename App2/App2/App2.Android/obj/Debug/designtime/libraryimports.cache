@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <ManifestDocuments>
+<<<<<<< HEAD
     <ManifestDocument>obj\Debug\lp\12\jl\AndroidManifest.xml</ManifestDocument>
+=======
+    <ManifestDocument>obj\Debug\lp\11\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\13\jl\AndroidManifest.xml</ManifestDocument>
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
     <ManifestDocument>obj\Debug\lp\14\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\15\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\16\jl\AndroidManifest.xml</ManifestDocument>
@@ -15,12 +20,22 @@
     <ManifestDocument>obj\Debug\lp\24\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\25\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\26\jl\AndroidManifest.xml</ManifestDocument>
+<<<<<<< HEAD
     <ManifestDocument>obj\Debug\lp\27\jl\AndroidManifest.xml</ManifestDocument>
   </ManifestDocuments>
   <NativeLibraries />
   <Jars>
     <Jar>obj\Debug\lp\12\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\lp\13\jl\support-annotations.jar</Jar>
+=======
+  </ManifestDocuments>
+  <NativeLibraries />
+  <Jars>
+    <Jar>obj\Debug\lp\1\jl\formsviewgroup.jar</Jar>
+    <Jar>obj\Debug\lp\11\jl\bin\classes.jar</Jar>
+    <Jar>obj\Debug\lp\12\jl\support-annotations.jar</Jar>
+    <Jar>obj\Debug\lp\13\jl\bin\classes.jar</Jar>
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
     <Jar>obj\Debug\lp\14\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\lp\15\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\lp\16\jl\bin\classes.jar</Jar>
@@ -34,7 +49,10 @@
     <Jar>obj\Debug\lp\24\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\lp\25\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\lp\26\jl\bin\classes.jar</Jar>
+<<<<<<< HEAD
     <Jar>obj\Debug\lp\27\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\lp\3\jl\formsviewgroup.jar</Jar>
+=======
+>>>>>>> 511fea47603837c975d77271765bbbe851e01428
   </Jars>
 </Paths>
