@@ -881,20 +881,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alex_\\.nuget\\packages\\": {}
+    "C:\\Users\\Hicham\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
       "projectName": "App2.Android",
-      "projectPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
-      "packagesPath": "C:\\Users\\Alex_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\obj\\",
+      "projectPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\App2.Android.csproj",
+      "packagesPath": "C:\\Users\\Hicham\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Alex_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hicham\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -907,8 +907,8 @@
       "frameworks": {
         "monoandroid71": {
           "projectReferences": {
-            "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj": {
-              "projectPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj"
+            "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj": {
+              "projectPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj"
             }
           }
         }

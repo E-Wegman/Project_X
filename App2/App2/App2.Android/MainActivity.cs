@@ -22,9 +22,10 @@ namespace Data_X
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         //Rest van de items die we later ooit gaan aanpassen
-        public string Name { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string date { get; set; }
+        public string time { get; set; }
+        public string activity { get; set; }
+        public int color { get; set;  }
     }
 }
 
@@ -46,4 +47,3 @@ namespace App2.Droid
         }
     }
 }
-

@@ -53,13 +53,13 @@ namespace LocalStorage
             }
         }
 
-        public Data_X.Data GetItem(string userName)
-        {
-            lock (locker)
-            {
-                return database.Table<Data_X.Data>().FirstOrDefault(x => x.Username == userName);
-            }
-        }
+        //public Data_X.Data GetItem(string userName)
+        //{
+        //    lock (locker)
+        //    {
+        //        return database.Table<Data_X.Data>().FirstOrDefault(x => x.Username == userName);
+        //    }
+        //}
 
         //insert and update data
         public int SaveItem(Data_X.Data item)

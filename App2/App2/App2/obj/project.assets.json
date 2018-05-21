@@ -711,23 +711,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alex_\\.nuget\\packages\\": {},
+    "C:\\Users\\Hicham\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
+      "projectUniqueName": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
       "projectName": "App2",
-      "projectPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
-      "packagesPath": "C:\\Users\\Alex_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\obj\\",
+      "projectPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
+      "packagesPath": "C:\\Users\\Hicham\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Alex_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hicham\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
