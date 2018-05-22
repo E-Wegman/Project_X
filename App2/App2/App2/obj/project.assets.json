@@ -594,11 +594,13 @@
         "build/netstandard2.0/Xamarin.Forms.props",
         "build/netstandard2.0/Xamarin.Forms.targets",
         "lib/MonoAndroid10/FormsViewGroup.dll",
+        "lib/MonoAndroid10/FormsViewGroup.dll.mdb",
         "lib/MonoAndroid10/FormsViewGroup.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
@@ -711,44 +713,24 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\poket\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
-=======
-    "C:\\Users\\Hicham\\.nuget\\packages\\": {},
->>>>>>> 511fea47603837c975d77271765bbbe851e01428
+    "C:\\Users\\Alex_\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
+      "projectUniqueName": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
       "projectName": "App2",
-      "projectPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
-      "packagesPath": "C:\\Users\\poket\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\poket\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
-      "projectName": "App2",
-      "projectPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
-      "packagesPath": "C:\\Users\\Hicham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hicham\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\obj\\",
->>>>>>> 511fea47603837c975d77271765bbbe851e01428
+      "projectPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\App2.csproj",
+      "packagesPath": "C:\\Users\\Alex_\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alex_\\Documents\\GitHub\\Project_X\\App2\\App2\\App2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\poket\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
-=======
-        "C:\\Users\\Hicham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alex_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 511fea47603837c975d77271765bbbe851e01428
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"

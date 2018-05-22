@@ -13,5 +13,9 @@ namespace App2
 		{
 			InitializeComponent();
 		}
-	}
+        private async void AgendaButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Agenda());
+        }
+    }
 }

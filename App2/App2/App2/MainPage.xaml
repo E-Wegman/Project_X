@@ -4,4 +4,10 @@
              xmlns:local="clr-namespace:App2"
              x:Class="App2.MainPage">
 
+    <StackLayout BackgroundColor="White">
+        <Entry x:Name="MainEntry"/>
+
+        <Button Text="Agenda"
+                Clicked="AgendaButton_OnClicked"/>
+    </StackLayout>
 </ContentPage>
