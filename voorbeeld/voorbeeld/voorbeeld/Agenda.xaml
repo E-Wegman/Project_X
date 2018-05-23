@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="voorbeeld.Agenda">
+    
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="Center">
+
+        <DatePicker x:Name="MainDatePicker" 
+                    MinimumDate ="2018/5/22"
+                    MaximumDate ="2018/5/24"
+                    />
+            
+        <Label x:Name="MainLabel"
+               Text="{Binding Date, Source={x:Reference MainDatePicker}}"
+               FontSize="30"
+               HorizontalOptions="Center"
+               TextColor="White"/>
+    </StackLayout>
+
+</ContentPage>
