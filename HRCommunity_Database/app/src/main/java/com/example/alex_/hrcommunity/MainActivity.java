@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
@@ -21,8 +22,8 @@ public class MainActivity extends AppCompatActivity
 
     private static final String TAG = "MainActivity";
 
-    private TextView theDate;
-    private Button buttonToCalendar;
+    private ListView eventList;
+    private FloatingActionButton addButton;
 
 
 
@@ -32,14 +33,11 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        theDate = (TextView) findViewById(R.id.theDate);
-        buttonToCalendar = (Button) findViewById(R.id.buttonToCalendar);
 
-        Intent incomingIntent = getIntent();
-        String date = incomingIntent.getStringExtra("date");
-        theDate.setText(date);
+        eventList = (ListView) findViewById(R.id.eventList);
+        addButton = (FloatingActionButton) findViewById(R.id.addButton);
 
-        buttonToCalendar.setOnClickListener(new View.OnClickListener() {
+        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
