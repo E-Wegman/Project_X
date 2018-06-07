@@ -1,5 +1,6 @@
 package com.example.alex_.hrcommunity;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,6 +46,38 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+
+        //The Database
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+        AppDatabase.class, "Agenda").build();
+
+        //Voorbeeld item
+        Activity item1 = new Activity();
+        item1.setAid(1);
+        item1.setActivityName("Project"); //Gebruik "deze" niet 'deze' anders error
+        item1.setActivityEvent("School");
+        item1.setColour("Red"); //Kies uit kleuren
+        item1.setPriority(5);
+
+        Activity.Date date1 = new Activity.Date();
+        date1.setStartyear("2018"); //Kan int maken
+        date1.setStartmonth("June");
+        date1.setStartday("7");
+        date1.setStarthours_minutes("18:31");
+
+        date1.setEndyear("2018");
+        date1.setEndmonth("June");
+        date1.setEndday("7");
+        date1.setEndhours_minutes("23:59");
+
+        item1.setStart(date1);
+
+        //Zou alle mogelijke items moeten inserten
+        db.activityDao().insertAll();
+
+        //Zou alle huidige items in database terug moeten geven
+        db.activityDao().getAll();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
