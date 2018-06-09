@@ -5,7 +5,7 @@ import android.arch.persistence.room.*;
 
 //maakt de database
 
-@Database(entities = {Activity.class}, version = 1)
+@Database(entities = {Activity.class}, version = 1) //, exportSchema = false
 public abstract class AppDatabase extends RoomDatabase {
     public abstract ActivityDao activityDao();
 }

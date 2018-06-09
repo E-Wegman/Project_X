@@ -53,13 +53,13 @@ public class Activity {
         Colour = colour;
     }
 
-    public Date getStart() {
+    public Date getDate() {
 
         return date;
     }
 
-    public void setStart(Date start) {
-        this.date = start;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public int getPriority() {
@@ -89,19 +89,19 @@ public class Activity {
         public String endDay;
         public String endHours_Minutes;
 
-        public String getStartyear() {
+        public String getStartYear() {
             return startYear;
         }
 
-        public void setStartyear(String startyear) {
+        public void setStartYear(String startyear) {
             this.startYear = startYear;
         }
 
-        public String getStartmonth() {
+        public String getStartMonth() {
             return startMonth;
         }
 
-        public void setStartmonth(String startMonth) {
+        public void setStartMonth(String startMonth) {
             this.startMonth = startMonth;
         }
 
@@ -109,47 +109,47 @@ public class Activity {
             return startDay;
         }
 
-        public void setStartday(String startDay) {
+        public void setStartDay(String startDay) {
             this.startDay = startDay;
         }
 
-        public String getStarthours_minutes() {
+        public String getStartHours_Minutes() {
             return startHours_Minutes;
         }
 
-        public void setStarthours_minutes(String startHours_Minutes) {
+        public void setStartHours_Minutes(String startHours_Minutes) {
             this.startHours_Minutes = startHours_Minutes;
         }
 
-        public String getEndyear() {
+        public String getEndYear() {
             return endYear;
         }
 
-        public void setEndyear(String endYear) {
+        public void setEndYear(String endYear) {
             this.endYear = endYear;
         }
 
-        public String getEndmonth() {
+        public String getEndMonth() {
             return endMonth;
         }
 
-        public void setEndmonth(String endMonth) {
+        public void setEndMonth(String endMonth) {
             this.endMonth = endMonth;
         }
 
-        public String getEndday() {
+        public String getEndDay() {
             return endDay;
         }
 
-        public void setEndday(String endDay) {
+        public void setEndDay(String endDay) {
             this.endDay = endDay;
         }
 
-        public String getEndhours_minutes() {
+        public String getEndHours_Minutes() {
             return endHours_Minutes;
         }
 
-        public void setEndhours_minutes(String endhours_minutes) {
+        public void setEndHours_Minutes(String endhours_minutes) {
             this.endHours_Minutes = endhours_minutes;
         }
     }

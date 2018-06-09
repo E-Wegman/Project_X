@@ -1,0 +1,105 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "958cbeee5c71deb732a2550747eda4d6",
+    "entities": [
+      {
+        "tableName": "Activity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`aid` INTEGER NOT NULL, `activityName` TEXT, `activityEvent` TEXT, `Colour` TEXT, `priority` INTEGER NOT NULL, `startYear` TEXT, `startMonth` TEXT, `startDay` TEXT, `startHours_Minutes` TEXT, `endYear` TEXT, `endMonth` TEXT, `endDay` TEXT, `endHours_Minutes` TEXT, PRIMARY KEY(`aid`))",
+        "fields": [
+          {
+            "fieldPath": "aid",
+            "columnName": "aid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activityName",
+            "columnName": "activityName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activityEvent",
+            "columnName": "activityEvent",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Colour",
+            "columnName": "Colour",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "priority",
+            "columnName": "priority",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date.startYear",
+            "columnName": "startYear",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date.startMonth",
+            "columnName": "startMonth",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date.startDay",
+            "columnName": "startDay",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date.startHours_Minutes",
+            "columnName": "startHours_Minutes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date.endYear",
+            "columnName": "endYear",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date.endMonth",
+            "columnName": "endMonth",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date.endDay",
+            "columnName": "endDay",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date.endHours_Minutes",
+            "columnName": "endHours_Minutes",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "aid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"958cbeee5c71deb732a2550747eda4d6\")"
+    ]
+  }
+}

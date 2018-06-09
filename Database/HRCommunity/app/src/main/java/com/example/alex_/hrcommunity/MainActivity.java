@@ -61,17 +61,17 @@ public class MainActivity extends AppCompatActivity
         item1.setPriority(5);
 
         Activity.Date date1 = new Activity.Date();
-        date1.setStartyear("2018"); //Kan int maken
-        date1.setStartmonth("June");
-        date1.setStartday("7");
-        date1.setStarthours_minutes("18:31");
+        date1.setStartYear("2018"); //Kan int maken
+        date1.setStartMonth("June");
+        date1.setStartDay("7");
+        date1.setStartHours_Minutes("18:31");
 
-        date1.setEndyear("2018");
-        date1.setEndmonth("June");
-        date1.setEndday("7");
-        date1.setEndhours_minutes("23:59");
+        date1.setEndYear("2018");
+        date1.setEndMonth("June");
+        date1.setEndDay("7");
+        date1.setEndHours_Minutes("23:59");
 
-        item1.setStart(date1);
+        item1.setDate(date1);
 
         //Zou alle mogelijke items moeten inserten
         db.activityDao().insertAll();
