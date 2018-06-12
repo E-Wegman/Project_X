@@ -61,15 +61,17 @@ public class MainActivity extends AppCompatActivity
         item1.setPriority(5);
 
         Activity.Date date1 = new Activity.Date();
-        date1.setStartYear("2018"); //Kan int maken
-        date1.setStartMonth("June");
-        date1.setStartDay("7");
-        date1.setStartHours_Minutes("18:31");
+        date1.setStartYear(2018);
+        date1.setStartMonth(6);
+        date1.setStartDay(7);
+        date1.setStartHours(18);
+        date1.setStartMinutes(51);
 
-        date1.setEndYear("2018");
-        date1.setEndMonth("June");
-        date1.setEndDay("7");
-        date1.setEndHours_Minutes("23:59");
+        date1.setEndYear(2018);
+        date1.setEndMonth(6);
+        date1.setEndDay(7);
+        date1.setEndHours(23);
+        date1.setStartMinutes(59);
 
         item1.setDate(date1);
 
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity
 
         //Zou alle huidige items in database terug moeten geven
         db.activityDao().getAll();
-
+        db.activityDao().findByMonth(2018, 6);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

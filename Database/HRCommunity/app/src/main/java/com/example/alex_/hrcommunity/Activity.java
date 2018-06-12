@@ -53,10 +53,7 @@ public class Activity {
         Colour = colour;
     }
 
-    public Date getDate() {
-
-        return date;
-    }
+    public Date getDate() { return date; }
 
     public void setDate(Date date) {
         this.date = date;
@@ -79,79 +76,78 @@ public class Activity {
     }
 
     public static class Date {
-        public String startYear;
-        public String startMonth;
-        public String startDay;
-        public String startHours_Minutes;
+        public int startYear;
+        public int startMonth;
+        public int startDay;
+        public int startHours;
+        public int startMinutes;
 
-        public String endYear;
-        public String endMonth;
-        public String endDay;
-        public String endHours_Minutes;
+        public int endYear;
+        public int endMonth;
+        public int endDay;
+        public int endHours;
+        public int endMinutes;
 
-        public String getStartYear() {
+        public int getStartYear() {
             return startYear;
         }
 
-        public void setStartYear(String startyear) {
-            this.startYear = startYear;
-        }
+        public void setStartYear(int startyear) { this.startYear = startYear; }
 
-        public String getStartMonth() {
+        public int getStartMonth() {
             return startMonth;
         }
 
-        public void setStartMonth(String startMonth) {
-            this.startMonth = startMonth;
-        }
+        public void setStartMonth(int startMonth) { this.startMonth = startMonth; }
 
-        public String getStartday() {
+        public int getStartDay() {
             return startDay;
         }
 
-        public void setStartDay(String startDay) {
+        public void setStartDay(int startDay) {
             this.startDay = startDay;
         }
 
-        public String getStartHours_Minutes() {
-            return startHours_Minutes;
-        }
+        public int getStartHours() { return startHours; }
 
-        public void setStartHours_Minutes(String startHours_Minutes) {
-            this.startHours_Minutes = startHours_Minutes;
-        }
+        public void setStartHours(int startHours) { this.startHours = startHours; }
 
-        public String getEndYear() {
+        public int getStartMinutes() { return startMinutes; }
+
+        public void setStartMinutes(int startMinutes) { this.startMinutes = startMinutes; }
+
+
+        public int getEndYear() {
             return endYear;
         }
 
-        public void setEndYear(String endYear) {
+        public void setEndYear(int endYear) {
             this.endYear = endYear;
         }
 
-        public String getEndMonth() {
+        public int getEndMonth() {
             return endMonth;
         }
 
-        public void setEndMonth(String endMonth) {
+        public void setEndMonth(int endMonth) {
             this.endMonth = endMonth;
         }
 
-        public String getEndDay() {
+        public int getEndDay() {
             return endDay;
         }
 
-        public void setEndDay(String endDay) {
+        public void setEndDay(int endDay) {
             this.endDay = endDay;
         }
 
-        public String getEndHours_Minutes() {
-            return endHours_Minutes;
-        }
+        public int getEndHours() { return endHours; }
 
-        public void setEndHours_Minutes(String endhours_minutes) {
-            this.endHours_Minutes = endhours_minutes;
-        }
+        public void setEndHours(int endHours) { this.endHours = endHours; }
+
+        public int getEndMinutes() { return endMinutes; }
+
+        public void setEndMinutes(int endMinutes) { this.endMinutes = endMinutes; }
     }
 
     @Ignore
