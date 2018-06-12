@@ -52,12 +52,12 @@ public class MainActivity extends AppCompatActivity
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),
         AppDatabase.class, "Agenda").build();
 
-        //Voorbeeld item
+        //Example item
         Activity item1 = new Activity();
         item1.setAid(1);
-        item1.setActivityName("Project"); //Gebruik "deze" niet 'deze' anders error
+        item1.setActivityName("Project"); //Use "" not '' else error
         item1.setActivityEvent("School");
-        item1.setColour("Red"); //Kies uit kleuren
+        item1.setColour("Red"); //Choose the colours
         item1.setPriority(5);
 
         Activity.Date date1 = new Activity.Date();
