@@ -1,5 +1,6 @@
 package com.example.alex_.hrcommunity;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -40,9 +41,18 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
-<<<<<<< HEAD
-=======
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+
+/*
         //The Database
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),
         AppDatabase.class, "Agenda").build();
@@ -77,17 +87,9 @@ public class MainActivity extends AppCompatActivity
         db.activityDao().getAll();
         //Should return all items in june 2018
         db.activityDao().findByMonth(2018, 6);
+*/
 
->>>>>>> ab9b34d6a4979c58558227f2bafd3048a24fff58
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-    }
 
     @Override
     public void onBackPressed() {
@@ -143,3 +145,4 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 }
+

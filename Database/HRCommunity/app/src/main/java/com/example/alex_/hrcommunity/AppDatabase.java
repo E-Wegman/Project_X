@@ -11,5 +11,5 @@ public abstract class AppDatabase extends RoomDatabase {
 }
 
 // To actually make a database
-AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-      AppDatabase.class, "database-name").build();
+/*AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+      AppDatabase.class, "database-name").build();*/
