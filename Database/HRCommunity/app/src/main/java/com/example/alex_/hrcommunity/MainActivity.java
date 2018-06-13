@@ -69,17 +69,18 @@ public class MainActivity extends AppCompatActivity
 
         date1.setEndYear(2018);
         date1.setEndMonth(6);
-        date1.setEndDay(7);
-        date1.setEndHours(23);
+        date1.setEndDay(18);
+        date1.setEndHours(8);
         date1.setStartMinutes(59);
 
         item1.setDate(date1);
 
-        //Zou alle mogelijke items moeten inserten
+        //Should insert all items
         db.activityDao().insertAll();
 
-        //Zou alle huidige items in database terug moeten geven
+        //Should return all items
         db.activityDao().getAll();
+        //Should return all items in june 2018
         db.activityDao().findByMonth(2018, 6);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
