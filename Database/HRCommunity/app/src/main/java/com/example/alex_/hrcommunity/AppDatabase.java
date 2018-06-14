@@ -10,6 +10,6 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ActivityDao activityDao();
 }
 
-// To actually make a database
-/*AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-      AppDatabase.class, "database-name").build();*/
+//  To actually make a database
+//AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+//        AppDatabase.class, "database-name").build();
