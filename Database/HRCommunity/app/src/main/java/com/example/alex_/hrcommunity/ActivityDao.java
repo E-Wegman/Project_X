@@ -1,41 +1,43 @@
 package com.example.alex_.hrcommunity;
-
 import android.arch.persistence.room.*;
 import java.util.List;
-//functies om te doen met de tables
+
+//All queries and functions
 @Dao
 public interface ActivityDao {
-    //Returns everything in the database
+    //Returns everything in the database in an Array
     @Query("SELECT * FROM activity")
     List<Activity> getAll();
 
-    //Returns everything ordered by date?? Or all in given tuples?? Idk plz test what does this do
-    @Query("SELECT * FROM activity WHERE startYear IN (:actyears) AND startMonth IN (:actmonths) AND startDay IN (:actdays)")
-    List<Activity> loadAllByDate(int[] actyears, int[] actmonths, int[] actdays);
+    //Should return anything in the given date in an Array
+    @Query("SELECT * FROM activity WHERE startYear IN (:actYears) AND startMonth IN (:actMonths) AND startDay IN (:actDays)")
+    List<Activity> loadAllByDate(int[] actYears, int[] actMonths, int[] actDays);
 
-    //Returns the activity found by name
-    @Query("SELECT * FROM activity WHERE activityName LIKE :name LIMIT 1")
-    Activity findByName(String name);
-
-    //Return the activities in the given year
+    //Return the activities in the given year in an Array
     @Query("SELECT * FROM activity WHERE startYear LIKE :year")
-    Activity findByYear(int year);
+    List<Activity> findByYear(int year);
 
-    //Return the activities in given month
+    //Return the activities in the given month in an Array
     @Query("SELECT * FROM activity WHERE startYear LIKE :year AND startMonth LIKE :month")
-    Activity findByMonth(int year, int month);
+    List<Activity> findByMonth(int year, int month);
 
-    //Return the activities in given date
+    //Return the activities in the given date in an Array
     @Query("SELECT * FROM activity WHERE startYear LIKE :year AND startMonth LIKE :month AND startDay LIKE :day")
-    Activity findByDate(int year, int month, int day);
+    List<Activity> findByDate(int year, int month, int day);
 
+    //Returns the activity found by ID. Not an Array
+    @Query("SELECT * FROM activity WHERE aid LIKE :id LIMIT 1")
+    Activity findByID(int id);
 
+    //Inserts all activities
     @Insert
     void insertAll(Activity... activities);
 
+    //Updates all activities
     @Update
-    public void updateActivity(Activity... activities);
+    void updateActivity(Activity... activities);
 
+    //Deletes given activity
     @Delete
     void delete(Activity activity);
 }

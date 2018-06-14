@@ -3,7 +3,7 @@ package com.example.alex_.hrcommunity;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.*;
 
-//maakt de database
+//Creates the database
 
 @Database(entities = {Activity.class}, version = 1) //, exportSchema = false
 public abstract class AppDatabase extends RoomDatabase {
