@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity
 
         //Example item
         Activity item1 = new Activity();
-        item1.setAid(1);
         item1.setActivityName("Project"); //Use "" not '' else error
         item1.setActivityEvent("School");
         item1.setColour("Red"); //Choose the colours
         item1.setPriority(5);
+        item1.setPeriodic(true);
 
         Activity.Date date1 = new Activity.Date();
         date1.setStartYear(2018);
@@ -71,16 +71,25 @@ public class MainActivity extends AppCompatActivity
         date1.setEndMonth(6);
         date1.setEndDay(7);
         date1.setEndHours(23);
-        date1.setStartMinutes(59);
+        date1.setEndMinutes(59);
 
         item1.setDate(date1);
 
-        //Zou alle mogelijke items moeten inserten
+        //Should Insert all items
         db.activityDao().insertAll();
 
-        //Zou alle huidige items in database terug moeten geven
+        //To get something, first call database (db)
+        //Then the DAO (.activityDao())
+        //Then choose your query (example: .findByYear(2018)) (queries can be found in the ActivityDao.java file)
+        //If the query returns an array, choose which one from the array you want to use (.get(0))
+        //If you want to get a Date, first call the class (.getDate())
+        //Finally choose what you want to get or set (example .getStartDay)
+        db.activityDao().findByYear(2018).get(0).getDate().getStartDay();
+
+        //Returns all items in an Array
         db.activityDao().getAll();
-        db.activityDao().findByMonth(2018, 6);
+
+        //Function
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

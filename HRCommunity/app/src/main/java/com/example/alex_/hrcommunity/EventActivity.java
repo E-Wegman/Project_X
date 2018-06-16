@@ -27,17 +27,16 @@ public class EventActivity extends AppCompatActivity {
         toevoegen = findViewById(R.id.toevoegen);
         mDatabaseHelper = new database(this);
 
-        /*
         toevoegen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {EditText.getText().toString();
-               // String newEntry =
+                String newEntry =
 
                 Intent intent = new Intent(EventActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
-*/
+
     }
     public void AddData(String newEntry){
         boolean insertData = mDatabaseHelper.addData(newEntry);

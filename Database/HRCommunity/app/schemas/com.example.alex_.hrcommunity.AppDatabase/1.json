@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "36c286eeb6ae42a9450e45d6c7120117",
+    "identityHash": "ddbb17dfa9cd05fcf2126f629ca6b21f",
     "entities": [
       {
         "tableName": "Activity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`aid` INTEGER NOT NULL, `activityName` TEXT, `activityEvent` TEXT, `Colour` TEXT, `priority` INTEGER NOT NULL, `startYear` INTEGER, `startMonth` INTEGER, `startDay` INTEGER, `startHours` INTEGER, `startMinutes` INTEGER, `endYear` INTEGER, `endMonth` INTEGER, `endDay` INTEGER, `endHours` INTEGER, `endMinutes` INTEGER, PRIMARY KEY(`aid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`aid` INTEGER NOT NULL, `activityName` TEXT, `activityEvent` TEXT, `Colour` TEXT, `priority` INTEGER NOT NULL, `periodic` INTEGER NOT NULL, `startYear` INTEGER, `startMonth` INTEGER, `startDay` INTEGER, `startHours` INTEGER, `startMinutes` INTEGER, `endYear` INTEGER, `endMonth` INTEGER, `endDay` INTEGER, `endHours` INTEGER, `endMinutes` INTEGER, PRIMARY KEY(`aid`))",
         "fields": [
           {
             "fieldPath": "aid",
@@ -35,6 +35,12 @@
           {
             "fieldPath": "priority",
             "columnName": "priority",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "periodic",
+            "columnName": "periodic",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -111,7 +117,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"36c286eeb6ae42a9450e45d6c7120117\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"ddbb17dfa9cd05fcf2126f629ca6b21f\")"
     ]
   }
 }
