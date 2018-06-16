@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity
         item1.setActivityEvent("School");
         item1.setColour("Red"); //Choose the colours
         item1.setPriority(5);
+        item1.setPeriodic(true);
 
         Activity.Date date1 = new Activity.Date();
         date1.setStartYear(2018);

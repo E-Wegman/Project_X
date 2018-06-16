@@ -13,6 +13,7 @@ public class Activity {
     private int priority;
     @Embedded
     public Date date;
+    private boolean periodic;
 
     //Getters and setters
     public int getAid() {
@@ -49,6 +50,8 @@ public class Activity {
     public void setPriority(int priority) {
         this.priority = priority;
     }
+    public boolean isPeriodic() { return periodic; }
+    public void setPeriodic(boolean periodic) { this.periodic = periodic; }
     public Bitmap getPicture() {
         return picture;
     }
