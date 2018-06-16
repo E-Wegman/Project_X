@@ -5,8 +5,9 @@ import android.graphics.Bitmap;
 //The Table
 @Entity
 public class Activity {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int aid;
+
     private String activityName;
     private String activityEvent; //school/private/work
     private String Colour;

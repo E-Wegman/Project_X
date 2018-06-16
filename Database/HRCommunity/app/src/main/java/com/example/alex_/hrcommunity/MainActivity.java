@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity
 
         //Example item
         Activity item1 = new Activity();
-        item1.setAid(1);
         item1.setActivityName("Project"); //Use "" not '' else error
         item1.setActivityEvent("School");
         item1.setColour("Red"); //Choose the colours
@@ -89,6 +88,8 @@ public class MainActivity extends AppCompatActivity
 
         //Returns all items in an Array
         db.activityDao().getAll();
+
+        //Function
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
