@@ -24,23 +24,22 @@ public class EventActivity extends AppCompatActivity {
 
     private static final String TAG = "CalendarActivity";
 
-    final Button button = (Button) findViewById(R.id.toevoegen);
-    EditText text = (EditText) findViewById(R.id.activiteit);
+    //final Button button = (Button) findViewById(R.id.toevoegen);
+    //EditText text = (EditText) findViewById(R.id.activiteit);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_layout);
 
+        /*
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String content = text.getText().toString(); //gets you the contents of edit text
                 Activity inputItem = new Activity();
                 inputItem.setActivityName(content);
             }
-        });
+        }); */
     }
-
-        //android:onClick="AddFunction"
 
 }
