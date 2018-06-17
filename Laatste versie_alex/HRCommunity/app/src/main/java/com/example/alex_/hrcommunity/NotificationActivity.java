@@ -12,6 +12,6 @@ public class NotificationActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_bar_main);
+        setContentView(R.layout.fragment_home);
     }
 }
