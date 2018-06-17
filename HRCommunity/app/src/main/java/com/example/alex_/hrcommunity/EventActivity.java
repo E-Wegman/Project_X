@@ -29,7 +29,7 @@ public class EventActivity extends AppCompatActivity {
 
         toevoegen.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {EditText.getText().toString();
+            public void onClick(View view) {activiteit.getText().toString();
                 String newEntry =
 
                 Intent intent = new Intent(EventActivity.this, MainActivity.class);
