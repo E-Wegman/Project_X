@@ -9,7 +9,7 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName = "event")
 public class Events {
 
-    @PrimaryKey(autoGenerate = true)
+   // @PrimaryKey(autoGenerate = true)
     private int id;
 
     public int getId() {
