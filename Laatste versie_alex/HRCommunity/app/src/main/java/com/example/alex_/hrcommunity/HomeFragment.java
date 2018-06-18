@@ -1,6 +1,7 @@
 package com.example.alex_.hrcommunity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,7 +15,7 @@ import android.widget.Button;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    private Button addBtn, viewBtn, deleteBtn, updateBtn;
+    private Button addBtn, viewBtn, deleteBtn, updateBtn, periodeBtn;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -37,6 +38,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         updateBtn = view.findViewById(R.id.updateBtn);
         updateBtn.setOnClickListener(this);
+
+        periodeBtn = view.findViewById(R.id.periodeToevoegen);
+        periodeBtn.setOnClickListener(this);
+
         return view;
     }
 
@@ -61,6 +66,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.updateBtn:
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new UpdateEventFragment()).
                         addToBackStack(null).commit();
+                break;
+
+            case R.id.periodeToevoegen:
+                Intent intent = new Intent(getActivity(), Periodiek_Stap1.class);
+                startActivity(intent);
                 break;
         }
     }
