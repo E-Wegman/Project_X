@@ -63,7 +63,8 @@ public class Events {
     public void setDatum(String datum) {
         this.datum = datum;
     }
-
+/*
+    @PrimaryKey(autoGenerate = true)
     private int aid;
 
     private String activityName;
@@ -129,10 +130,10 @@ public class Events {
 
     public void setPeriodic(boolean periodic) {
         this.periodic = periodic;
-    }
+    }*/
 
     //The start and end Date of the item
-    public static class Date {
+   /* public static class Date {
         public int startYear;
         public int startMonth;
         public int startDay;
@@ -225,5 +226,5 @@ public class Events {
         public void setEndMinutes(int endMinutes) {
             this.endMinutes = endMinutes;
         }
-    }
+    }*/
 }

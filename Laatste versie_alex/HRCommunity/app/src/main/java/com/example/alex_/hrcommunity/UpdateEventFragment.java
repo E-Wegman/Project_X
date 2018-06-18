@@ -35,6 +35,7 @@ public class UpdateEventFragment extends Fragment {
         Start_tijd = view.findViewById(R.id.start_tijd);
         Eind_tijd = view.findViewById(R.id.eind_tijd);
         Datum = view.findViewById(R.id.datum);
+        Opslaan = view.findViewById(R.id.opslaan);
 
         Opslaan.setOnClickListener(new View.OnClickListener(){
 
@@ -50,7 +51,7 @@ public class UpdateEventFragment extends Fragment {
                 events.setTitel(titel);
                 events.setStart_tijd(start_tijd);
                 events.setEind_tijd(eind_tijd);
-                events.setDatum(titel);
+                events.setDatum(datum);
 
                 MainActivity.myAppDatabase.myDao().updateEvent(events);
 
@@ -62,8 +63,8 @@ public class UpdateEventFragment extends Fragment {
 
             }
         });
-        return view;
 
+        return view;
     }
 
 }
