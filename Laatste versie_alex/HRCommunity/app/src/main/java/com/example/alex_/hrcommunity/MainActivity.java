@@ -1,11 +1,17 @@
 package com.example.alex_.hrcommunity;
 
+import android.app.AlarmManager;
 import android.app.FragmentManager;
+import android.app.PendingIntent;
 import android.arch.persistence.room.Room;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.Calendar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +24,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        Intent notificationIntent = new Intent(this, AlarmReceiver.class);
+        PendingIntent broadcast = PendingIntent.getBroadcast(this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Calendar cal = Calendar.getInstance();
+        //cal.set(Calendar.HOUR_OF_DAY, 14);
+        //cal.set(Calendar.MINUTE, 4);
+        //cal.set(Calendar.SECOND,1);
+        cal.add(Calendar.SECOND, 10);
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
+
         fragmentManager = getSupportFragmentManager();
         //Main thread..
         myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "eventsdb").allowMainThreadQueries().build();
