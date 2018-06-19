@@ -35,12 +35,13 @@ public class ReadEventFragment extends Fragment {
         String info = "";
 
         for(Events evts: events){
+            int id = evts.getId();
             String titel = evts.getTitel();
             String start_tijd = evts.getStart_tijd();
             String eind_tijd = evts.getEind_tijd();
             String datum = evts.getDatum();
 
-            info = info+"\n\n"+"Titel : "+titel+"\n Start tijd :"+start_tijd+"\n Eind tijd : "+eind_tijd+"\n Datum :"+datum;
+            info = info+"\n\n"+"Id :"+id+"\n Titel : "+titel+"\n Start tijd :"+start_tijd+"\n Eind tijd : "+eind_tijd+"\n Datum :"+datum;
         }
 
         EventInfo.setText(info);

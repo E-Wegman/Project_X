@@ -16,7 +16,7 @@ import android.widget.Toast;
  */
 public class UpdateEventFragment extends Fragment {
 
-    private EditText Titel, Start_tijd, Eind_tijd, Datum;
+    private EditText EventsId, Titel, Start_tijd, Eind_tijd, Datum;
     private Button Opslaan;
 
     public UpdateEventFragment() {
@@ -31,6 +31,7 @@ public class UpdateEventFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_update_event, container, false);
 
+        EventsId = view.findViewById(R.id.events_id);
         Titel = view.findViewById(R.id.titel);
         Start_tijd = view.findViewById(R.id.start_tijd);
         Eind_tijd = view.findViewById(R.id.eind_tijd);
@@ -42,12 +43,14 @@ public class UpdateEventFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                int id = Integer.parseInt(EventsId.getText().toString());
                 String titel = Titel.getText().toString();
                 String start_tijd = Start_tijd.getText().toString();
                 String eind_tijd = Eind_tijd.getText().toString();
                 String datum = Datum.getText().toString();
 
                 Events events = new Events();
+                events.setId(id);
                 events.setTitel(titel);
                 events.setStart_tijd(start_tijd);
                 events.setEind_tijd(eind_tijd);
@@ -56,6 +59,7 @@ public class UpdateEventFragment extends Fragment {
                 MainActivity.myAppDatabase.myDao().updateEvent(events);
 
                 Toast.makeText(getActivity(), "Events succesfully updated",Toast.LENGTH_SHORT).show();
+                EventsId.setText("");
                 Titel.setText("");
                 Start_tijd.setText("");
                 Eind_tijd.setText("");

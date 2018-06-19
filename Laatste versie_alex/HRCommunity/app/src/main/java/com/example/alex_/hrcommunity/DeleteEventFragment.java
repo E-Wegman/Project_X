@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class DeleteEventFragment extends Fragment {
-    private EditText TitelId;
+    private EditText deleteId;
     private Button deleteButton;
 
     public DeleteEventFragment() {
@@ -25,22 +25,22 @@ public class DeleteEventFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_delete_event, container, false);
 
-        TitelId = view.findViewById(R.id.delete_title);
+        deleteId = view.findViewById(R.id.delete_id);
         deleteButton = view.findViewById(R.id.delete);
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String titel_id = TitelId.getText().toString();
+                int id = Integer.parseInt(deleteId.getText().toString());
 
                 Events events = new Events();
-                events.setTitel(titel_id);
+                events.setId(id);
 
                 MainActivity.myAppDatabase.myDao().deleteEvent(events);
 
                 Toast.makeText(getActivity(), "Events succesfully removed",Toast.LENGTH_SHORT).show();
-                TitelId.setText("");
+                deleteId.setText("");
 
             }
         });

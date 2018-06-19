@@ -16,7 +16,7 @@ import android.widget.Toast;
  */
 public class AddEventsFragment extends Fragment {
 
-    private EditText Titel, Starttijd, Eindtijd, Datum;
+    private EditText EventsId, Titel, Starttijd, Eindtijd, Datum;
     private Button toevoegen;
 
     public AddEventsFragment() {
@@ -30,6 +30,7 @@ public class AddEventsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add_events, container, false);
 
+        EventsId = view.findViewById(R.id.events_id);
         Titel = view.findViewById(R.id.titel);
         Starttijd = view.findViewById(R.id.start_tijd);
         Eindtijd = view.findViewById(R.id.eind_tijd);
@@ -39,12 +40,14 @@ public class AddEventsFragment extends Fragment {
         toevoegen.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                int eventsid = Integer.parseInt(EventsId.getText().toString());
                 String titel = Titel.getText().toString();
                 String starttijd = Starttijd.getText().toString();
                 String eindtijd = Eindtijd.getText().toString();
                 String datum = Datum.getText().toString();
 
                 Events events = new Events();
+                events.setId(eventsid);
                 events.setTitel(titel);
                 events.setStart_tijd(starttijd);
                 events.setEind_tijd(eindtijd);
@@ -54,6 +57,7 @@ public class AddEventsFragment extends Fragment {
                 MainActivity.myAppDatabase.myDao().addEvents(events);
                 Toast.makeText(getActivity(), "Events add succesfully",Toast.LENGTH_SHORT).show();
 
+                EventsId.setText("");
                 Titel.setText("");
                 Starttijd.setText("");
                 Eindtijd.setText("");
