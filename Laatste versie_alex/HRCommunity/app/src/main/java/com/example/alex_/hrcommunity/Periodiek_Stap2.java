@@ -24,6 +24,8 @@ import java.util.List;
 public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener, TimePickerDialog.OnTimeSetListener{
 
     char begin = 'B';
+    String startTimeView;
+    String endTimeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,14 +77,16 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         if (begin == 'B'){
+            startTimeView = hourOfDay + ":" + minute;
             TextView textView = (TextView)findViewById(R.id.beginTijdShow);
-            textView.setText(hourOfDay + ":" + minute);
-        }
-        else{
-            TextView textView = (TextView)findViewById(R.id.eindTijdShow);
-            textView.setText(hourOfDay + ":" + minute);
+            textView.setText(startTimeView);
         }
 
+        else{
+            endTimeView = hourOfDay + ":" + minute;
+            TextView textView = (TextView)findViewById(R.id.eindTijdShow);
+            textView.setText(endTimeView);
+        }
     }
 }
 

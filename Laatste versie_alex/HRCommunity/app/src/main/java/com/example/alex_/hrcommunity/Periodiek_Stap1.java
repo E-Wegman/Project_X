@@ -21,8 +21,12 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class Periodiek_Stap1 extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+//public static final String FIRST_DATE = "com.example.alex_hrcommunity.FIRST_DATE";
+//public static final String END_DATE = "com.example.alex_hrcommunity.FIRST_END";
 
 char begin = 'B';
+String endDateString;
+String startDateString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +40,7 @@ char begin = 'B';
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Periodiek_Stap1.this, Periodiek_Stap1_5.class);
-                startActivity(intent);
+                openStap1_5();
             }
         });
 
@@ -66,17 +69,24 @@ char begin = 'B';
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        String currentDateString = DateFormat.getDateInstance().format(c.getTime());
 
         if(begin == 'B'){
+            startDateString = DateFormat.getDateInstance().format(c.getTime());
             TextView textView = (TextView) findViewById(R.id.beginPeriode);
-            textView.setText(currentDateString);
+            textView.setText(startDateString);
         }
-        else{
+        else {
+            endDateString = DateFormat.getDateInstance().format(c.getTime());
             TextView textView = (TextView) findViewById(R.id.eindePeriode);
-            textView.setText(currentDateString);
+            textView.setText(endDateString);
         }
+    }
 
+    public void openStap1_5(){
+        Intent intent = new Intent(Periodiek_Stap1.this, Periodiek_Stap1_5.class);
+        //    intent.putExtra(FIRST_DATE, startDateString)
+        //    intent.putExtra(END_DATE, endDateString);
+        startActivity(intent);
     }
 }
 

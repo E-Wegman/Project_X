@@ -17,9 +17,19 @@ import java.util.Calendar;
 
 public class Periodiek_Stap1_5 extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
+    Intent intent = getIntent();
+
+    //String FIRST_DATE = intent.getStringExtra(Periodiek_Stap1.FIRST_DATE);
+    //String END_DATE = intent.getStringExtra(Periodiek_Stap1.END_DATE);
+
+    //public static final String FIRST_DATE_stap1 = "com.example.alex_hrcommunity.FIRST_DATE_stap1";
+    //public static final String END_DATE_stap1 = "com.example.alex_hrcommunity.FIRST_END_stap1";
+    //public static final String FIRST_VACATION_DATE ="com.example.alex_hrcommunity.FIRST_VACATION_DATE";
+
     RadioGroup radioGroup;
     RadioButton radioButton;
     TextView textView;
+    String vacationStartDateString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +65,6 @@ public class Periodiek_Stap1_5 extends AppCompatActivity implements DatePickerDi
                 startActivity(intent);
             }
         });
-
-
     }
 
 
@@ -66,9 +74,8 @@ public class Periodiek_Stap1_5 extends AppCompatActivity implements DatePickerDi
             c.set(Calendar.YEAR, year);
             c.set(Calendar.MONTH, month);
             c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            String currentDateString = DateFormat.getDateInstance().format(c.getTime());
+            vacationStartDateString = DateFormat.getDateInstance().format(c.getTime());
             TextView textView = (TextView) findViewById(R.id.vakantieBegin);
-            textView.setText(currentDateString);
-
+            textView.setText(vacationStartDateString);
         }
 }
