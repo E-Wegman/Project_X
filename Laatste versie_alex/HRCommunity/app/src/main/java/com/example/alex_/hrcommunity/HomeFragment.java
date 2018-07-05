@@ -49,8 +49,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.addBtn:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddEventsFragment()).
-                        addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddEventsActivity()).
+                        addToBackStack(null).commit();]
                 break;
 
             case R.id.viewBtn:

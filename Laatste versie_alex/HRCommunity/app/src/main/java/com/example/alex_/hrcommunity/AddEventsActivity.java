@@ -1,63 +1,49 @@
 package com.example.alex_.hrcommunity;
 
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.util.Calendar;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class AddEventsFragment extends FragmentActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
-
-    //maakt globale variableen aan
+public class AddEventsActivity extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     private TextView EventStartTijd, EventEindTijd, EventDatum;
     private EditText EEventTitel;
     private Button BEventToevoegen, BEventStartijd, BEventEindTijd, BEventBeginDatum;
     private char begin;
 
-    public AddEventsFragment() {
-        // Required empty public constructor
-    }
 
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_add_events, container, false);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         //koppelt de globale variableen aan de gegevens van de ID's in het xml bestand
-        EEventTitel = view.findViewById(R.id.textEventTitel);
-        EventStartTijd = view.findViewById(R.id.textEventStartTijd);
-        EventEindTijd= view.findViewById(R.id.textEventEindTijd);
-        EventDatum = view.findViewById(R.id.textEventDatum);
-        BEventToevoegen = view.findViewById(R.id.buttonEventToevoegen);
-        BEventStartijd = view.findViewById(R.id.buttonEventStartTijd);
-        BEventEindTijd = view.findViewById(R.id.buttonEventEindTijd);
-        BEventBeginDatum = view.findViewById(R.id.buttonEventBeginDatum);
+        EEventTitel = findViewById(R.id.textEventTitel);
+        EventStartTijd = findViewById(R.id.textEventStartTijd);
+        EventEindTijd = findViewById(R.id.textEventEindTijd);
+        EventDatum = findViewById(R.id.textEventDatum);
+        BEventToevoegen = findViewById(R.id.buttonEventToevoegen);
+        BEventStartijd = findViewById(R.id.buttonEventStartTijd);
+        BEventEindTijd = findViewById(R.id.buttonEventEindTijd);
+        BEventBeginDatum = findViewById(R.id.buttonEventBeginDatum);
 
         //
-        BEventToevoegen.setOnClickListener(new View.OnClickListener(){
+        BEventToevoegen.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 String titel = EEventTitel.getText().toString();
                 String starttijd = EventStartTijd.getText().toString();
                 String eindtijd = EventEindTijd.getText().toString();
@@ -77,6 +63,7 @@ public class AddEventsFragment extends FragmentActivity implements DatePickerDia
                 EventDatum.setText("");
             }
         });
+
 
         BEventBeginDatum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,10 +89,6 @@ public class AddEventsFragment extends FragmentActivity implements DatePickerDia
                 timePicker.show(getSupportFragmentManager(), "time picker");
             }
         });
-
-
-
-        return view;
     }
 
     @Override
@@ -126,7 +109,3 @@ public class AddEventsFragment extends FragmentActivity implements DatePickerDia
         textView.setText("Hour: " + hourOfDay + " Minute: " + minute );
     }
 }
-
-
-
-

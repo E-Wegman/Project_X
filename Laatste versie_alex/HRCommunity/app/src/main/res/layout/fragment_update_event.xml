@@ -8,7 +8,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textEventAddEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -34,11 +34,11 @@
         android:inputType="textPersonName|number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textEventAddEvent"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/titel"
+        android:id="@+id/textEventTitel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -53,7 +53,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/start_tijd"
+        android:id="@+id/textEventStartTijd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -64,10 +64,10 @@
         android:inputType="datetime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titel" />
+        app:layout_constraintTop_toBottomOf="@id/textEventTitel" />
 
     <EditText
-        android:id="@+id/eind_tijd"
+        android:id="@+id/textEventEindTijd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -78,10 +78,10 @@
         android:inputType="datetime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/start_tijd"/>
+        app:layout_constraintTop_toBottomOf="@id/textEventStartTijd"/>
 
     <EditText
-        android:id="@+id/datum"
+        android:id="@+id/textEventDatum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -92,7 +92,7 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/eind_tijd"/>
+        app:layout_constraintTop_toBottomOf="@id/textEventEindTijd"/>
 
     <Button
         android:id="@+id/opslaan"
@@ -105,7 +105,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/datum"
+        app:layout_constraintTop_toBottomOf="@id/textEventDatum"
         tools:ignore="MissingConstraints"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -32,10 +32,10 @@ public class UpdateEventFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_update_event, container, false);
 
         EventsId = view.findViewById(R.id.events_id);
-        Titel = view.findViewById(R.id.titel);
-        Start_tijd = view.findViewById(R.id.start_tijd);
-        Eind_tijd = view.findViewById(R.id.eind_tijd);
-        Datum = view.findViewById(R.id.datum);
+        Titel = view.findViewById(R.id.textEventTitel);
+        Start_tijd = view.findViewById(R.id.textEventStartTijd);
+        Eind_tijd = view.findViewById(R.id.textEventEindTijd);
+        Datum = view.findViewById(R.id.textEventDatum);
         Opslaan = view.findViewById(R.id.opslaan);
 
         Opslaan.setOnClickListener(new View.OnClickListener(){
