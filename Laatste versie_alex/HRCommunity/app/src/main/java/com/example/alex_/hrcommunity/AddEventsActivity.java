@@ -2,14 +2,10 @@ package com.example.alex_.hrcommunity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -19,31 +15,33 @@ import android.widget.TimePicker;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class AddEventsActivity extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+public class AddEventsActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
+
+    //maakt globale variableen aan
     private TextView EventStartTijd, EventEindTijd, EventDatum;
     private EditText EEventTitel;
     private Button BEventToevoegen, BEventStartijd, BEventEindTijd, BEventBeginDatum;
     private char begin;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_events);
 
-        //koppelt de globale variableen aan de gegevens van de ID's in het xml bestand
         EEventTitel = findViewById(R.id.textEventTitel);
         EventStartTijd = findViewById(R.id.textEventStartTijd);
-        EventEindTijd = findViewById(R.id.textEventEindTijd);
+        EventEindTijd= findViewById(R.id.textEventEindTijd);
         EventDatum = findViewById(R.id.textEventDatum);
         BEventToevoegen = findViewById(R.id.buttonEventToevoegen);
         BEventStartijd = findViewById(R.id.buttonEventStartTijd);
         BEventEindTijd = findViewById(R.id.buttonEventEindTijd);
         BEventBeginDatum = findViewById(R.id.buttonEventBeginDatum);
 
-        //
-        BEventToevoegen.setOnClickListener(new View.OnClickListener() {
+        BEventToevoegen.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public void onClick(View view){
                 String titel = EEventTitel.getText().toString();
                 String starttijd = EventStartTijd.getText().toString();
                 String eindtijd = EventEindTijd.getText().toString();
@@ -64,20 +62,12 @@ public class AddEventsActivity extends AppCompatActivity implements  DatePickerD
             }
         });
 
-
-        BEventBeginDatum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
         BEventStartijd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 begin = 'B';
                 DialogFragment timePicker = new TimePickerFragment();
-                timePicker.show(getSupportFragmentManager(), "time picker");
+                timePicker.show(getSupportFragmentManager(),"time picker");
             }
         });
 
@@ -86,7 +76,15 @@ public class AddEventsActivity extends AppCompatActivity implements  DatePickerD
             public void onClick(View v) {
                 begin = 'E';
                 DialogFragment timePicker = new TimePickerFragment();
-                timePicker.show(getSupportFragmentManager(), "time picker");
+                timePicker.show(getSupportFragmentManager(),"time picker");
+            }
+        });
+
+        BEventBeginDatum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(),"date picker");
             }
         });
     }
@@ -99,13 +97,20 @@ public class AddEventsActivity extends AppCompatActivity implements  DatePickerD
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
         String DateString = DateFormat.getDateInstance().format(c.getTime());
-        TextView textView = (TextView) view.findViewById(R.id.eindePeriode);
+        TextView textView = (TextView) findViewById(R.id.textEventDatum);
         textView.setText(DateString);
     }
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        TextView textView = view.findViewById(R.id.textEventStartTijd);
-        textView.setText("Hour: " + hourOfDay + " Minute: " + minute );
+        if (begin == 'B'){
+            TextView textView = (TextView)findViewById(R.id.textEventStartTijd);
+            textView.setText(hourOfDay + ":" + minute);
+        }
+
+        else{
+            TextView textView = (TextView)findViewById(R.id.textEventEindTijd);
+            textView.setText(hourOfDay + ":" + minute);
+        }
     }
 }

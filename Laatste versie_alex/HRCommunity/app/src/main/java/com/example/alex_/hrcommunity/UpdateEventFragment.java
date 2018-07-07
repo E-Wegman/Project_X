@@ -14,6 +14,7 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
+/*
 public class UpdateEventFragment extends Fragment {
 
     private EditText EventsId, Titel, Start_tijd, Eind_tijd, Datum;
@@ -36,7 +37,6 @@ public class UpdateEventFragment extends Fragment {
         Start_tijd = view.findViewById(R.id.textEventStartTijd);
         Eind_tijd = view.findViewById(R.id.textEventEindTijd);
         Datum = view.findViewById(R.id.textEventDatum);
-        Opslaan = view.findViewById(R.id.opslaan);
 
         Opslaan.setOnClickListener(new View.OnClickListener(){
 
@@ -72,3 +72,4 @@ public class UpdateEventFragment extends Fragment {
     }
 
 }
+*/

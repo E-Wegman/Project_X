@@ -1,4 +1,4 @@
-package com.example.alex_.hrcommunity;
+/*package com.example.alex_.hrcommunity;
 
 import android.content.Context;
 import android.net.Uri;
@@ -48,3 +48,4 @@ public class DeleteEventFragment extends Fragment {
     }
 
 }
+*/

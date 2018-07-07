@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddEventsFragment"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context=".AddEventsActivity">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/textEventAddEvent"
         android:layout_width="wrap_content"
@@ -183,6 +181,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.676" />
-
-
 </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    android:layout_marginBottom="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <TextView
+            android:id="@+id/titelEvenement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/opTekst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titelEvenement"
+            android:layout_marginRight="5dp"
+            android:text="op"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/datumEvenement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titelEvenement"
+            android:layout_toRightOf="@id/opTekst"
+            android:layout_marginRight="5dp"
+            android:text="12 mei 2018"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/vanTekst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titelEvenement"
+            android:layout_toRightOf="@id/datumEvenement"
+            android:layout_marginRight="5dp"
+            android:text="van"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/beginTijdEvenement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titelEvenement"
+            android:layout_toRightOf="@id/vanTekst"
+            android:layout_marginBottom="5dp"
+            android:text="12:40"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totTekst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titelEvenement"
+            android:layout_toRightOf="@id/beginTijdEvenement"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="tot"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/eindTijdEvenement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titelEvenement"
+            android:layout_toRightOf="@id/totTekst"
+            android:text="12:40"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

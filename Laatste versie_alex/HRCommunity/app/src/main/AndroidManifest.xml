@@ -29,10 +29,8 @@
         <activity
             android:name=".Periodiek_Stap2"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".AddEventsActivity"
-            android:label="@string/title_activity_add_events"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AddEventsActivity" />
+        <activity android:name=".TemporaryReadEventActivity"></activity>
     </application>
 
 </manifest>

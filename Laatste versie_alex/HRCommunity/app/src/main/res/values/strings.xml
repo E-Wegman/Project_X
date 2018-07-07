@@ -15,6 +15,27 @@
         <item>Vrijdag</item>
     </string-array>
 
+    <string-array name="vacationLengthArray">
+        <item>Lengte vakantie</item>
+        <item>1 Week</item>
+        <item>2 Weken</item>
+        <item>3 Weken</item>
+        <item>4 Weken</item>
+        <item>5 Weken</item>
+        <item>6 Weken</item>
+        <item>7 Weken</item>
+    </string-array>
+
+    <string-array name="semesterLengthArray">
+        <item>Lengte periode</item>
+        <item>5 Weken</item>
+        <item>6 Weken</item>
+        <item>7 Weken</item>
+        <item>8 Weken</item>
+        <item>9 Weken</item>
+        <item>10 Weken</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_add_events">AddEventsActivity</string>
