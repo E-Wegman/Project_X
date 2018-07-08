@@ -5,12 +5,14 @@ public class EvenementenReader {
         private String mbeginTijdEvenement;
         private String meindTijdEvenement;
         private String mdatumEvenement;
+        private int mIDEvenement;
 
-        public EvenementenReader(String titelEvenement, String beginTijdEvenement, String eindTijdEvenement, String datumEvenement){
+        public EvenementenReader(String titelEvenement, String beginTijdEvenement, String eindTijdEvenement, String datumEvenement, int IDEvenement){
             mtitelEvenement = titelEvenement;
             mbeginTijdEvenement = beginTijdEvenement;
             meindTijdEvenement = eindTijdEvenement;
             mdatumEvenement = datumEvenement;
+            mIDEvenement = IDEvenement;
         }
 
         public String gettitelEvenement(){
@@ -28,4 +30,9 @@ public class EvenementenReader {
         public String getdatumEvenement(){
             return mdatumEvenement;
         }
+
+        public int getIDEvenement(){
+            return mIDEvenement;
+        }
+
 }

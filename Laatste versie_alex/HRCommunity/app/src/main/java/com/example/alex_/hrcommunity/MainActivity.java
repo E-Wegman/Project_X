@@ -43,17 +43,17 @@ public class MainActivity extends AppCompatActivity {
 
 //maakt arraylist aan en vult hier 1 item in om te testen -> item later weghalen wanneer data out database wordt gehaald
         ArrayList<EvenementenReader> evenementenAl = new ArrayList<>();
-        evenementenAl.add(new EvenementenReader("Titel", "12:40", "15:40", "12 mei 2018"));
 
 //make for loop that gets the data out of the database
         ArrayList<Events> events = new ArrayList<Events>(MainActivity.myAppDatabase.myDao().getEvents());
 
         for (int i = 0; i < events.size(); i = i + 1) {
+            int eID = events.get(i).getId();
             String eTitel = events.get(i).getTitel();
             String eStartTijd = events.get(i).getStart_tijd();
             String eEindTijd = events.get(i).getEind_tijd();
             String eDatum = events.get(i).getDatum();
-            evenementenAl.add(new EvenementenReader(eTitel, eStartTijd, eEindTijd, eDatum));
+            evenementenAl.add(new EvenementenReader(eTitel, eStartTijd, eEindTijd, eDatum, eID));
         }
 
 //zorgt voor de view dat deze goed wordt gehandeld
