@@ -28,5 +28,4 @@ public class EvenementenReader {
         public String getdatumEvenement(){
             return mdatumEvenement;
         }
-
 }

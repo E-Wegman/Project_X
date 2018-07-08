@@ -12,12 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    public static android.support.v4.app.FragmentManager fragmentManager;
 
     public static MyAppDatabase myAppDatabase;
 
@@ -25,38 +23,47 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapater;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    Events evenement = new Events();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//Maakt de database aan?
+        myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "eventsdb").allowMainThreadQueries().build();
+
+//zet alle gedeelten van de UI op een variabele
         FloatingActionButton add = findViewById(R.id.evenementenToevoegen);
 
-        //maakt arraylist aan en vult hier 1 item in om te testen -> item later weghalen wanneer data out database wordt gehaald
-        ArrayList<EvenementenReader> evenementenList = new ArrayList<>();
-        evenementenList.add(new EvenementenReader("Titel", "12:40", "15:40", "12 mei 2018"));
-
-        //make for loop that gets the data out of the database
-        /*MainActivity.myAppDatabase.myDao().getEvents();
-        EEventTitel.setText("");
-        EventStartTijd.setText("");
-        EventEindTijd.setText("");
-        EventDatum.setText("");
-*/
 
 
+//maakt arraylist aan en vult hier 1 item in om te testen -> item later weghalen wanneer data out database wordt gehaald
+        ArrayList<EvenementenReader> evenementenAl = new ArrayList<>();
+        evenementenAl.add(new EvenementenReader("Titel", "12:40", "15:40", "12 mei 2018"));
+
+//make for loop that gets the data out of the database
+        List<Events> events = MainActivity.myAppDatabase.myDao().getEvents();
+
+        for (int i = 0; i < events.size(); i = i + 1) {
+            String eTitel = evenement.getTitel();
+            String eStartTijd = evenement.getStart_tijd();
+            String eEindTijd = evenement.getEind_tijd();
+            String eDatum = evenement.getDatum();
+            evenementenAl.add(new EvenementenReader(eTitel, eStartTijd, eEindTijd, eDatum));
+        }
 
 //zorgt voor de view dat deze goed wordt gehandeld
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapater = new EvenementenAdapter(evenementenList);
-
+        mAdapater = new EvenementenAdapter(evenementenAl);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapater);
 
 
+// De onClicklistener zorgt ervoor dat de knoppen wat doen
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,47 +73,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    public void onRestart(){
+        super.onRestart();
+        mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        mAdapater = new EvenementenAdapter(evenementenAl);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapater);
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
-  @SuppressWarnings("StatementWithEmptyBody")
-
-   public void onNavigationItemSelected(MenuItem item) {
-
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-
-        } else if (id == R.id.nav_agenda) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-  }
 */
-
 }
