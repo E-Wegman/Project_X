@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//Maakt de database aan?
+//Maakt de database aan!
         myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "eventsdb").allowMainThreadQueries().build();
 
 //zet alle gedeelten van de UI op een variabele
@@ -44,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
         evenementenAl.add(new EvenementenReader("Titel", "12:40", "15:40", "12 mei 2018"));
 
 //make for loop that gets the data out of the database
-        List<Events> events = MainActivity.myAppDatabase.myDao().getEvents();
+        ArrayList<Events> events = new ArrayList<Events>(MainActivity.myAppDatabase.myDao().getEvents());
 
         for (int i = 0; i < events.size(); i = i + 1) {
-            String eTitel = evenement.getTitel();
-            String eStartTijd = evenement.getStart_tijd();
-            String eEindTijd = evenement.getEind_tijd();
-            String eDatum = evenement.getDatum();
+            String eTitel = events.get(i).getTitel();
+            String eStartTijd = events.get(i).getStart_tijd();
+            String eEindTijd = events.get(i).getEind_tijd();
+            String eDatum = events.get(i).getDatum();
             evenementenAl.add(new EvenementenReader(eTitel, eStartTijd, eEindTijd, eDatum));
         }
 
