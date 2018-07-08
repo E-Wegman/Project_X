@@ -63,7 +63,6 @@ public class AddEventsActivity extends AppCompatActivity implements DatePickerDi
                 if (titel.equals("") || starttijd.equals("") || eindtijd.equals("") || datum.equals("")) {
                     Toast.makeText(getApplicationContext(), "Kan niet toevoegen, niet alle velden zijn ingevuld", Toast.LENGTH_SHORT).show();
                 }
-
                 else{
                     Events events = new Events();
                     events.setTitel(titel);
