@@ -14,12 +14,15 @@ import java.util.ArrayList;
 public class EvenementenAdapter extends RecyclerView.Adapter<EvenementenAdapter.EvenementenViewHolder> {
     public ArrayList<EvenementenReader> mEvenementenReaders;
 
-    public static class EvenementenViewHolder extends RecyclerView.ViewHolder {
+
+    public class EvenementenViewHolder extends RecyclerView.ViewHolder {
+        public ArrayList<EvenementenReader> mEvenementenReaders;
         public TextView mTitelView;
         public TextView mBeginTijdView;
         public TextView mEindTijdView;
         public TextView mDatumView;
         public TextView mPrioriteitView;
+
         public Events ClickedOne;
 
         public EvenementenViewHolder(final View itemView) {
@@ -33,12 +36,12 @@ public class EvenementenAdapter extends RecyclerView.Adapter<EvenementenAdapter.
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Intent intent = new Intent(itemView.getContext(), VeranderActivity.class);
 
-                    
-
-                    itemView.getContext().startActivity(new Intent(itemView.getContext(), VeranderActivity.class));
-
-
+                    int ItemID = itemView.getId();
+                    int EventID = getEvenements().get(ItemID).getIDEvenement();
+                    intent.putExtra("ID", EventID);
+                    itemView.getContext().startActivity(intent);
                 }
             });
         }
@@ -76,4 +79,9 @@ public class EvenementenAdapter extends RecyclerView.Adapter<EvenementenAdapter.
     public int getItemCount() {
         return mEvenementenReaders.size();
     }
+
+    public ArrayList<EvenementenReader> getEvenements() { return mEvenementenReaders; }
+
 }
+
+
