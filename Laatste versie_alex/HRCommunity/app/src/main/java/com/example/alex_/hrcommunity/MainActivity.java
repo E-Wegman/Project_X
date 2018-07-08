@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 //Maakt de database aan!
-        myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "eventsdb").allowMainThreadQueries().build();
+        myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "Events" +
+                "db").allowMainThreadQueries().build();
 
 //zet alle gedeelten van de UI op een variabele
         FloatingActionButton add = findViewById(R.id.evenementenToevoegen);
@@ -73,7 +73,10 @@ public class MainActivity extends AppCompatActivity {
             String eStartTijd = events.get(i).getStart_tijd();
             String eEindTijd = events.get(i).getEind_tijd();
             String eDatum = events.get(i).getDatum();
-            evenementenAl.add(new EvenementenReader(eTitel, eStartTijd, eEindTijd, eDatum, eID));
+            String eKleur = events.get(i).getKleur();
+            int ePrioriteit = events.get(i).getPrioriteit();
+
+            evenementenAl.add(new EvenementenReader(eTitel, eStartTijd, eEindTijd, eDatum, eID, ePrioriteit, eKleur));
         }
 
 //zorgt voor de view dat deze goed wordt gehandeld
