@@ -39,9 +39,29 @@ public class MainActivity extends AppCompatActivity {
 //zet alle gedeelten van de UI op een variabele
         FloatingActionButton add = findViewById(R.id.evenementenToevoegen);
 
+        run();
+
+// De onClicklistener zorgt ervoor dat de knoppen wat doen
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddEventsActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 
 
-//maakt arraylist aan en vult hier 1 item in om te testen -> item later weghalen wanneer data out database wordt gehaald
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        //When BACK BUTTON is pressed, the activity on the stack is restarted
+        run();
+    }
+
+
+    public void run(){
+        //maakt arraylist aan en vult hier 1 item in om te testen -> item later weghalen wanneer data out database wordt gehaald
         ArrayList<EvenementenReader> evenementenAl = new ArrayList<>();
         evenementenAl.add(new EvenementenReader("Titel", "12:40", "15:40", "12 mei 2018"));
 
@@ -63,26 +83,5 @@ public class MainActivity extends AppCompatActivity {
         mAdapater = new EvenementenAdapter(evenementenAl);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapater);
-
-
-// De onClicklistener zorgt ervoor dat de knoppen wat doen
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddEventsActivity.class);
-                startActivity(intent);
-            }
-        });
     }
-/*
-    public void onRestart(){
-        super.onRestart();
-        mRecyclerView = findViewById(R.id.recyclerView);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapater = new EvenementenAdapter(evenementenAl);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapater);
-    }
-*/
 }

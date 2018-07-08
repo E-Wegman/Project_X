@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -19,7 +20,7 @@ public class AddEventsActivity extends AppCompatActivity implements DatePickerDi
 
     //maakt globale variableen aan
     private TextView EventStartTijd, EventEindTijd, EventDatum;
-    private EditText EEventTitel;
+    private EditText EventTitel;
     private Button BEventToevoegen, BEventStartijd, BEventEindTijd, BEventBeginDatum;
     private char begin;
 
@@ -30,7 +31,7 @@ public class AddEventsActivity extends AppCompatActivity implements DatePickerDi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_events);
 
-        EEventTitel = findViewById(R.id.textEventTitel);
+        EventTitel = findViewById(R.id.textEventTitel);
         EventStartTijd = findViewById(R.id.textEventStartTijd);
         EventEindTijd= findViewById(R.id.textEventEindTijd);
         EventDatum = findViewById(R.id.textEventDatum);
@@ -42,25 +43,32 @@ public class AddEventsActivity extends AppCompatActivity implements DatePickerDi
         BEventToevoegen.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                String titel = EEventTitel.getText().toString();
+                String titel = EventTitel.getText().toString();
                 String starttijd = EventStartTijd.getText().toString();
                 String eindtijd = EventEindTijd.getText().toString();
                 String datum = EventDatum.getText().toString();
 
-                Events events = new Events();
-                events.setTitel(titel);
-                events.setStart_tijd(starttijd);
-                events.setEind_tijd(eindtijd);
-                events.setDatum(datum);
+                if (titel.equals("") || starttijd.equals("") || eindtijd.equals("") || datum.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Kan niet toevoegen, niet alle velden zijn ingevuld", Toast.LENGTH_SHORT).show();
+                }
 
-                //put data to database
-                MainActivity.myAppDatabase.myDao().addEvents(events);
-                EEventTitel.setText("");
-                EventStartTijd.setText("");
-                EventEindTijd.setText("");
-                EventDatum.setText("");
+                else{
+                    Events events = new Events();
+                    events.setTitel(titel);
+                    events.setStart_tijd(starttijd);
+                    events.setEind_tijd(eindtijd);
+                    events.setDatum(datum);
+
+                    //put data to database
+                    MainActivity.myAppDatabase.myDao().addEvents(events);
+                    EventTitel.setText("");
+                    EventStartTijd.setText("");
+                    EventEindTijd.setText("");
+                    EventDatum.setText("");
+                }
             }
         });
+
 
         BEventStartijd.setOnClickListener(new View.OnClickListener() {
             @Override
