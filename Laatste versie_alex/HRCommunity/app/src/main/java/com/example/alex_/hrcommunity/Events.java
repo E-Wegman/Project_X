@@ -4,6 +4,7 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 
 @Entity(tableName = "event")
@@ -31,6 +32,13 @@ public class Events {
 
     @ColumnInfo(name = "datum")
     private String datum;
+
+    @ColumnInfo(name = "prioriteit")
+    @NonNull
+    private int prioriteit;
+
+    @ColumnInfo(name = "kleur")
+    private String kleur;
 
     public String getTitel() {
         return titel;
@@ -63,7 +71,24 @@ public class Events {
     public void setDatum(String datum) {
         this.datum = datum;
     }
-/*
+
+    public int getPrioriteit() {
+        return prioriteit;
+    }
+
+    public void setPrioriteit(int prioriteit) {
+        this.prioriteit = prioriteit;
+    }
+
+    public String getKleur() {
+        return kleur;
+    }
+
+    public void setKleur(String kleur) {
+        this.kleur = kleur;
+    }
+
+    /*
     @PrimaryKey(autoGenerate = true)
     private int aid;
 
