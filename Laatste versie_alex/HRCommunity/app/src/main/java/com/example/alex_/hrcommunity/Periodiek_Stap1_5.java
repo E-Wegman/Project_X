@@ -23,12 +23,17 @@ public class Periodiek_Stap1_5 extends AppCompatActivity implements DatePickerDi
     public static final String FIRST_DATE_YEAR_STAP1_5 = "com.example.alex_.hrcommunity.FIRST_DATE_YEAR_STAP1_5";
     public static final String FIRST_DATE_MONTH_STAP1_5 = "com.example.alex_.hrcommunity.FIRST_DATE_MONTH_STAP1_5";
     public static final String FIRST_DATE_DAY_STAP1_5 = "com.example.alex_.hrcommunity.FIRST_DATE_DAY_STAP1_5";
-    public static final String FIRST_VACATION_DATE_STAP1_5 ="com.example.alex_hrcommunity.FIRST_VACATION_DATE_STAP1_5";
+    public static final String PERIODE_LENGTE_STAP1_5 = "com.example.alex_.hrcommunity.PERIODE_LENGTE_STAP1_5";
     public static final String VACATION_LENGTH_STAP1_5 = "com.example.alex_hrcommunity.VACTION_LENGTH";
-    public static final String PERIODE_LENGTE_STAP1_5 = "com.example.alex_hrcommunity.PERIODE_LENGTE_STAP1_5";
     public static final String FROM_STAP1_5 = "com.example.alex_hrcommunity.PERIODE_LENGTE_STAP1_5";
+    public static final String VACATION_START_MONTH = "com.example.alex_hrcommunity.VACATION_START_MONTH";
+    public static final String VACATION_START_DAY = "com.example.alex_hrcommunity.VACATION_START_DAY";
+    public static final String VACATION_START_YEAR = "com.example.alex_hrcommunity.VACATION_START_YEAR";
 
     String vacationStartDateString;
+    int vacationStartMonthInt;
+    int vacationStartDayInt;
+    int vacationStartYearInt;
     int startDateYearInt;
     int startDateMonthInt;
     int startDateDayInt;
@@ -64,7 +69,7 @@ public class Periodiek_Stap1_5 extends AppCompatActivity implements DatePickerDi
                     Toast.makeText(getApplicationContext(), "Vul de dagen in", Toast.LENGTH_SHORT).show();
                 } else {
                     open_stap2();
-            }
+                }
             }
         });
 
@@ -84,9 +89,15 @@ public class Periodiek_Stap1_5 extends AppCompatActivity implements DatePickerDi
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
         vacationStartDateString = DateFormat.getDateInstance().format(c.getTime());
         TextView textView = (TextView) findViewById(R.id.vakantieBegin);
         textView.setText(vacationStartDateString);
+
+        vacationStartYearInt = year;
+        vacationStartMonthInt = month;
+        vacationStartDayInt = dayOfMonth;
+
     }
 
 
@@ -101,14 +112,18 @@ public class Periodiek_Stap1_5 extends AppCompatActivity implements DatePickerDi
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
     public void open_stap2(){
         Intent intent = new Intent(Periodiek_Stap1_5.this, Periodiek_Stap2.class);
         intent.putExtra(FIRST_DATE_YEAR_STAP1_5, startDateYearInt);
         intent.putExtra(FIRST_DATE_MONTH_STAP1_5, startDateMonthInt);
         intent.putExtra(FIRST_DATE_DAY_STAP1_5, startDateDayInt);
-        intent.putExtra(FIRST_VACATION_DATE_STAP1_5, vacationStartDateString);
+        intent.putExtra(PERIODE_LENGTE_STAP1_5, periodeLengte);
+        intent.putExtra(VACATION_START_DAY, vacationStartDayInt);
+        intent.putExtra(VACATION_START_MONTH, vacationStartMonthInt);
+        intent.putExtra(VACATION_START_YEAR, vacationStartYearInt);
         intent.putExtra(VACATION_LENGTH_STAP1_5, vacationLength);
-        intent.putExtra(FROM_STAP1_5, "TRUE");
+        intent.putExtra(FROM_STAP1_5, true);
         startActivity(intent);
     }
 }
