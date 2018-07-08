@@ -32,23 +32,22 @@ import java.util.List;
 
 public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener, TimePickerDialog.OnTimeSetListener{
 
-    char begin = 'B';
-    String startTimeView, endTimeView, firstVacationDateString, vakNaamText, lokaalNaamText, fromStap1_5, datum;
-    int vacationLength, dagVanDeWeekInt, periodeLengte, startDateYearInt, startDateMonthInt, startDateDayInt, prioriteitLengte;
-    EditText vakNaamTextView, lokaalNaamTextView;
+    private char begin = 'B';
+    private String startTimeView, endTimeView, firstVacationDateString, fromStap1_5, datum, samenvoegingTitel;
+    private int vacationLength, dagVanDeWeekInt, periodeLengte, startDateYearInt, startDateMonthInt, startDateDayInt, prioriteitLengte;
+    private EditText vakNaamTextView, lokaalNaamTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_periodiek__stap2);
 
         //variabelen uit vorige activities worden opgehaald
         Intent intent = getIntent();
         fromStap1_5 = intent.getStringExtra(Periodiek_Stap1_5.FROM_STAP1_5);
-
         firstVacationDateString = intent.getStringExtra(Periodiek_Stap1_5.FIRST_VACATION_DATE_STAP1_5);
         vacationLength = intent.getIntExtra(Periodiek_Stap1_5.VACATION_LENGTH_STAP1_5, 0);
+
         if (fromStap1_5 == "TRUE"){
             periodeLengte = intent.getIntExtra(Periodiek_Stap1_5.PERIODE_LENGTE_STAP1_5, 0);
             startDateYearInt = intent.getIntExtra(Periodiek_Stap1_5.FIRST_DATE_YEAR_STAP1_5, 0);
@@ -60,20 +59,15 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
             startDateYearInt = intent.getIntExtra(Periodiek_Stap1.FIRST_DATE_YEAR_STAP1, 0);
             startDateMonthInt = intent.getIntExtra(Periodiek_Stap1.FIRST_DATE_MONTH_STAP1, 0);
             startDateDayInt = intent.getIntExtra(Periodiek_Stap1.FIRST_DATE_DAY_STAP1, 0);
-
         }
 
         //variabelen voor de knoppen en spinner worden aangemaakt
         vakNaamTextView = findViewById(R.id.vakNaam);
         lokaalNaamTextView = findViewById(R.id.lokaalNaamText);
 
-        vakNaamText = vakNaamTextView.getText().toString();
-        lokaalNaamText = lokaalNaamTextView.getText().toString();
-
         Button beginTijd = (Button) findViewById(R.id.startTijdVerander);
         Button eindTijd = (Button) findViewById(R.id.eindTijdVerander);
         Button voegToe = (Button) findViewById(R.id.periodeToevoegenButton);
-
 
         Spinner weekDag = (Spinner) findViewById(R.id.weekDag);
         //Array adapter, haalt het op uit: res ->values->strings.xml
@@ -82,14 +76,11 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
         weekDag.setAdapter(adapter);
         weekDag.setOnItemSelectedListener(new weekdagSpinnerClass());
 
-
         Spinner prioriteitSpinner = findViewById(R.id.prioriteitPeriodiek);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.prioriteitArray, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         prioriteitSpinner.setAdapter(adapter2);
         prioriteitSpinner.setOnItemSelectedListener(new PrioriteitSpinnerClass());
-
-
 
         //Knopjes om tijd aan te passen
         beginTijd.setOnClickListener(new View.OnClickListener() {
@@ -110,11 +101,22 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
             }
         });
 
+
         voegToe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        @Override
+        public void onClick(View v) {
+            String vakNaamText = vakNaamTextView.getText().toString();
+            String lokaalNaamText = lokaalNaamTextView.getText().toString();
+            samenvoegingTitel = vakNaamText + " - " + lokaalNaamText;
+
+            if (vakNaamText.equals("") || lokaalNaamText.equals("") || startTimeView.equals("") || endTimeView.equals("") || datum.equals("")) {
+                Toast.makeText(getApplicationContext(), "Vul de dagen in", Toast.LENGTH_SHORT).show();
+            }
+
+            else{
                 toevoegen();
             }
+        }
         });
     }
 
@@ -172,42 +174,39 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
     }
 
     public void toevoegen(){
-        String samenvoegingTitel = vakNaamText + " - " + lokaalNaamText;
         for (int i = -4; i < periodeLengte; i++){
             switch (dagVanDeWeekInt){
                 case 0:
                     startDateDayInt = startDateDayInt + (dagVanDeWeekInt * 7);
-                    periodeToevoegen(samenvoegingTitel);
+                    periodeToevoegen();
                     //its monday
                     break;
 
                 case 1:
                     startDateDayInt = startDateDayInt + 1 + (dagVanDeWeekInt * 7);
-                    periodeToevoegen(samenvoegingTitel);
+                    periodeToevoegen();
                     //its tuesday
                     break;
                 case 2:
                     startDateDayInt = startDateDayInt + 2 + (dagVanDeWeekInt * 7);
-                    periodeToevoegen(samenvoegingTitel);
+                    periodeToevoegen();
                     //its wednesday
                     break;
                 case 3:
                     startDateDayInt = startDateDayInt + 3 + (dagVanDeWeekInt * 7);
-                    periodeToevoegen(samenvoegingTitel);
+                    periodeToevoegen();
                     //its thursday
                     break;
                 case 4:
                     startDateDayInt = startDateDayInt + 4 + (dagVanDeWeekInt * 7);
-                    periodeToevoegen(samenvoegingTitel);
+                    periodeToevoegen();
                     // its friday
                     break;
             }
         }
-
-
     }
 
-    private void periodeToevoegen(String samenvoegingTitel) {
+    private void periodeToevoegen() {
         Calendar c;
         monthChoose(startDateYearInt, startDateMonthInt, startDateDayInt);
         c = Calendar.getInstance();
