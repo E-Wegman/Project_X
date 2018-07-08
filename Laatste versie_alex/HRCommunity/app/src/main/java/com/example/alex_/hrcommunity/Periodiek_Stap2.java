@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -32,8 +33,9 @@ import java.util.List;
 public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener, TimePickerDialog.OnTimeSetListener{
 
     char begin = 'B';
-    String startTimeView, endTimeView, firstVacationDateString, dagVanDeWeekString, vakNaamText, lokaalNaamText, fromStap1_5, datum;
-    int vacationLength, dagVanDeWeekInt, periodeLengte, startDateYearInt, startDateMonthInt, startDateDayInt;
+    String startTimeView, endTimeView, firstVacationDateString, vakNaamText, lokaalNaamText, fromStap1_5, datum;
+    int vacationLength, dagVanDeWeekInt, periodeLengte, startDateYearInt, startDateMonthInt, startDateDayInt, prioriteitLengte;
+    EditText vakNaamTextView, lokaalNaamTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,21 +64,32 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
         }
 
         //variabelen voor de knoppen en spinner worden aangemaakt
-        EditText vakNaamTextView = findViewById(R.id.vakNaam);
+        vakNaamTextView = findViewById(R.id.vakNaam);
+        lokaalNaamTextView = findViewById(R.id.lokaalNaamText);
+
         vakNaamText = vakNaamTextView.getText().toString();
-        EditText lokaalNaamTextView = findViewById(R.id.lokaalNaamText);
         lokaalNaamText = lokaalNaamTextView.getText().toString();
 
-        Spinner weekDag = (Spinner) findViewById(R.id.weekDag);
         Button beginTijd = (Button) findViewById(R.id.startTijdVerander);
         Button eindTijd = (Button) findViewById(R.id.eindTijdVerander);
         Button voegToe = (Button) findViewById(R.id.periodeToevoegenButton);
 
+
+        Spinner weekDag = (Spinner) findViewById(R.id.weekDag);
         //Array adapter, haalt het op uit: res ->values->strings.xml
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.daysArray, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         weekDag.setAdapter(adapter);
-        weekDag.setOnItemSelectedListener(this);
+        weekDag.setOnItemSelectedListener(new weekdagSpinnerClass());
+
+
+        Spinner prioriteitSpinner = findViewById(R.id.prioriteitPeriodiek);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.prioriteitArray, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        prioriteitSpinner.setAdapter(adapter2);
+        prioriteitSpinner.setOnItemSelectedListener(new PrioriteitSpinnerClass());
+
+
 
         //Knopjes om tijd aan te passen
         beginTijd.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +107,7 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
             begin = 'E';
             DialogFragment timePicker = new TimePickerFragment();
             timePicker.show(getSupportFragmentManager(), "time picker");
-        }
+            }
         });
 
         voegToe.setOnClickListener(new View.OnClickListener() {
@@ -107,13 +120,40 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        dagVanDeWeekString = parent.getItemAtPosition(position).toString();
-        dagVanDeWeekInt = position;
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public class PrioriteitSpinnerClass implements AdapterView.OnItemSelectedListener{
+
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            prioriteitLengte = position;
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    }
+
+    public class weekdagSpinnerClass implements AdapterView.OnItemSelectedListener{
+
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            dagVanDeWeekInt = position;
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
     }
 
     @Override
@@ -133,7 +173,7 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
 
     public void toevoegen(){
         String samenvoegingTitel = vakNaamText + " - " + lokaalNaamText;
-        for (int i = -5; i < periodeLengte; i++){
+        for (int i = -4; i < periodeLengte; i++){
             switch (dagVanDeWeekInt){
                 case 0:
                     startDateDayInt = startDateDayInt + (dagVanDeWeekInt * 7);
