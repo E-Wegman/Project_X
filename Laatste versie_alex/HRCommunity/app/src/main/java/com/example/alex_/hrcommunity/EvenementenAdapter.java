@@ -6,18 +6,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class EvenementenAdapter extends RecyclerView.Adapter<EvenementenAdapter.EvenementenViewHolder> {
-    private ArrayList<EvenementenReader> mEvenementenReaders;
+    public ArrayList<EvenementenReader> mEvenementenReaders;
 
-    public static class EvenementenViewHolder extends RecyclerView.ViewHolder{
+    public static class EvenementenViewHolder extends RecyclerView.ViewHolder {
         public TextView mTitelView;
         public TextView mBeginTijdView;
         public TextView mEindTijdView;
         public TextView mDatumView;
+        public TextView mPrioriteitView;
+        public Events ClickedOne;
 
         public EvenementenViewHolder(final View itemView) {
             super(itemView);
@@ -25,11 +28,17 @@ public class EvenementenAdapter extends RecyclerView.Adapter<EvenementenAdapter.
             mBeginTijdView = itemView.findViewById(R.id.beginTijdEvenement);
             mEindTijdView = itemView.findViewById(R.id.eindTijdEvenement);
             mDatumView = itemView.findViewById(R.id.datumEvenement);
+            mPrioriteitView = itemView.findViewById(R.id.PrioriteitView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    itemView.getContext().startActivity(new Intent(itemView.getContext(),MainActivity.class));
+
+                    
+
+                    itemView.getContext().startActivity(new Intent(itemView.getContext(), VeranderActivity.class));
+
+
                 }
             });
         }
@@ -51,10 +60,16 @@ public class EvenementenAdapter extends RecyclerView.Adapter<EvenementenAdapter.
     public void onBindViewHolder(@NonNull EvenementenViewHolder holder, int position) {
         EvenementenReader currentReader = mEvenementenReaders.get(position);
 
+        //Sets priority to a string
+        int prioriteit = currentReader.getPrioriteit();
+        String Sprioriteit = "" + prioriteit;
+
         holder.mTitelView.setText(currentReader.gettitelEvenement());
         holder.mBeginTijdView.setText(currentReader.getbeginTijdEvenement());
         holder.mEindTijdView.setText(currentReader.geteindTijdEvenement());
         holder.mDatumView.setText(currentReader.getdatumEvenement());
+        holder.mPrioriteitView.setText(Sprioriteit);
+
     }
 
     @Override

@@ -7,7 +7,7 @@ public class EvenementenReader {
         private String mdatumEvenement;
         private String mkleurEvenement;
         private int mIDEvenement;
-        private int mPrioreitEvenement;
+        private int mPrioriteitEvenement;
 
         public EvenementenReader(String titelEvenement, String beginTijdEvenement, String eindTijdEvenement, String datumEvenement, int IDEvenement, int PrioriteitEvenement, String KleurEvenement){
             mtitelEvenement = titelEvenement;
@@ -15,7 +15,7 @@ public class EvenementenReader {
             meindTijdEvenement = eindTijdEvenement;
             mdatumEvenement = datumEvenement;
             mIDEvenement = IDEvenement;
-            mPrioreitEvenement = PrioriteitEvenement;
+            mPrioriteitEvenement = PrioriteitEvenement;
             mkleurEvenement = KleurEvenement;
         }
 
@@ -39,8 +39,8 @@ public class EvenementenReader {
             return mIDEvenement;
         }
 
-        public int getPrioreit() {
-            return mPrioreitEvenement;
+        public int getPrioriteit() {
+            return mPrioriteitEvenement;
         }
 
         public String getkleurEvenement() {

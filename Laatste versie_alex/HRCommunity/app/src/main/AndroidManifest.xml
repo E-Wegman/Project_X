@@ -30,7 +30,8 @@
             android:name=".Periodiek_Stap2"
             android:screenOrientation="portrait" />
         <activity android:name=".AddEventsActivity" />
-        <activity android:name=".TemporaryReadEventActivity"></activity>
+        <activity android:name=".TemporaryReadEventActivity" />
+        <activity android:name=".VeranderActivity"></activity>
     </application>
 
 </manifest>

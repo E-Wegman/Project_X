@@ -69,7 +69,7 @@ public class AddEventsActivity extends AppCompatActivity implements DatePickerDi
                     events.setStart_tijd(starttijd);
                     events.setEind_tijd(eindtijd);
                     events.setDatum(datum);
-                    //events.setPrioriteit(prioriteit);
+                    events.setPrioriteit(prioriteit);
 
                     //put data to database
                     MainActivity.myAppDatabase.myDao().addEvents(events);
