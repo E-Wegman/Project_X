@@ -39,43 +39,13 @@ public class EvenementenAdapter extends RecyclerView.Adapter<EvenementenAdapter.
                 public void onClick(View view) {
                     Intent intent = new Intent(itemView.getContext(), VeranderActivity.class);
                         int EventID;
+                        int EvId = 0;
 
                     //get the one you clicked
                     getAdapterPosition();
-                    if (getAdapterPosition() < 1) {
-                        EventID = getEvenements().get(0).getIDEvenement();
-                    }
-                    else if (getAdapterPosition() < 2){
-                        EventID = getEvenements().get(1).getIDEvenement();
-                    }
-                    else if (getAdapterPosition() < 3){
-                        EventID = getEvenements().get(2).getIDEvenement();
-                    }
-                    else if (getAdapterPosition() < 4){
-                        EventID = getEvenements().get(3).getIDEvenement();
-                    }
-                    else if (getAdapterPosition() < 5){
-                        EventID = getEvenements().get(4).getIDEvenement();
-                    }
-                    else if (getAdapterPosition() < 6){
-                        EventID = getEvenements().get(5).getIDEvenement();
-                    }
-                    else if (getAdapterPosition() < 7){
-                        EventID = getEvenements().get(6).getIDEvenement();
-                    }
-                    else if (getAdapterPosition() < 8){
-                        EventID = getEvenements().get(7).getIDEvenement();
-                    }
-                    else if (getAdapterPosition() < 9){
-                        EventID = getEvenements().get(8).getIDEvenement();
-                    }
-                    else if (getAdapterPosition() < 10){
-                        EventID = getEvenements().get(9).getIDEvenement();
-                    }
-                    else{
-                        EventID = getEvenements().get(10).getIDEvenement();
-                    }
 
+                    EvId = getAdapterPosition();
+                    EventID = getEvenements().get(EvId).getIDEvenement();
                     intent.putExtra("ID", EventID);
                     itemView.getContext().startActivity(intent);
 
