@@ -171,11 +171,11 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         if (begin == 'B') {
-            startTimeView = hourOfDay + ":" + minute;
+            startTimeView =  String.format("%02d:%02d", hourOfDay, minute);
             TextView textView = (TextView) findViewById(R.id.beginTijdShow);
             textView.setText(startTimeView);
         } else {
-            endTimeView = hourOfDay + ":" + minute;
+            endTimeView =  String.format("%02d:%02d", hourOfDay, minute);
             TextView textView = (TextView) findViewById(R.id.eindTijdShow);
             textView.setText(endTimeView);
         }

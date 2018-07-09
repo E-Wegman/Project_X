@@ -141,12 +141,12 @@ public class AddEventsActivity extends AppCompatActivity implements DatePickerDi
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         if (begin == 'B'){
             TextView textView = (TextView)findViewById(R.id.textEventStartTijd);
-            textView.setText(hourOfDay + ":" + minute);
+            textView.setText(String.format("%02d:%02d", hourOfDay, minute));
         }
 
         else{
             TextView textView = (TextView)findViewById(R.id.textEventEindTijd);
-            textView.setText(hourOfDay + ":" + minute);
+            textView.setText(String.format("%02d:%02d", hourOfDay, minute));
         }
     }
 

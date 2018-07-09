@@ -17,8 +17,9 @@
             android:id="@+id/titelEvenement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello"
             android:layout_marginBottom="5dp"
+            android:text="Hello"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <TextView
@@ -28,6 +29,7 @@
             android:layout_below="@id/titelEvenement"
             android:layout_marginRight="5dp"
             android:text="op"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
@@ -35,9 +37,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/titelEvenement"
-            android:layout_toRightOf="@id/opTekst"
             android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/opTekst"
             android:text="12 mei 2018"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
@@ -45,9 +48,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/titelEvenement"
-            android:layout_toRightOf="@id/datumEvenement"
             android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/datumEvenement"
             android:text="van"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
@@ -55,9 +59,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/titelEvenement"
-            android:layout_toRightOf="@id/vanTekst"
             android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@id/vanTekst"
             android:text="12:40"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
@@ -65,10 +70,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/titelEvenement"
-            android:layout_toRightOf="@id/beginTijdEvenement"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/beginTijdEvenement"
             android:text="tot"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
@@ -78,6 +84,7 @@
             android:layout_below="@id/titelEvenement"
             android:layout_toRightOf="@id/totTekst"
             android:text="12:40"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
@@ -87,7 +94,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:layout_marginEnd="35dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#000000" />
 
     </RelativeLayout>
 
