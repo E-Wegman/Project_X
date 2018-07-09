@@ -70,6 +70,8 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
         Button beginTijd = (Button) findViewById(R.id.startTijdVerander);
         Button eindTijd = (Button) findViewById(R.id.eindTijdVerander);
         Button voegToe = (Button) findViewById(R.id.periodeToevoegenButton);
+        Button finishBtn = findViewById(R.id.finishButton);
+
 
         Spinner weekDag = (Spinner) findViewById(R.id.weekDag);
         //Array adapter, haalt het op uit: res ->values->strings.xml
@@ -115,6 +117,15 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
                 } else {
                     toevoegen();
                 }
+            }
+        });
+
+        finishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Periodiek_Stap2.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

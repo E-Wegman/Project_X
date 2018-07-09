@@ -101,6 +101,7 @@ public class Periodiek_Stap1 extends AppCompatActivity implements DatePickerDial
         intent.putExtra(FIRST_DATE_DAY_STAP1, startDateDayInt);
         intent.putExtra(PERIODE_LENGTESTAP1, periodeLengteInt);
         startActivity(intent);
+        finish();
     }
 
     public void openStap2(){
@@ -110,12 +111,14 @@ public class Periodiek_Stap1 extends AppCompatActivity implements DatePickerDial
         intent.putExtra(FIRST_DATE_DAY_STAP1, startDateDayInt);
         intent.putExtra(PERIODE_LENGTESTAP1, periodeLengteInt);
         startActivity(intent);
+        finish();
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         parent.getItemAtPosition(position).toString();
         periodeLengteInt = position;
+
     }
 
     @Override

@@ -125,5 +125,6 @@ public class Periodiek_Stap1_5 extends AppCompatActivity implements DatePickerDi
         intent.putExtra(VACATION_LENGTH_STAP1_5, vacationLength);
         intent.putExtra(FROM_STAP1_5, true);
         startActivity(intent);
+        finish();
     }
 }
