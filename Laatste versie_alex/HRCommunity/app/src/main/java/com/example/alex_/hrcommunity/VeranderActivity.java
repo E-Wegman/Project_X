@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.EventLog;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -17,15 +18,30 @@ public class VeranderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verander);
+        //Gets the event's id from prev screen
         int EventID = getIntent().getIntExtra("ID",0);
+        //Makes the database again, idk if needed but hey
+        myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "Events" +
+                "db").allowMainThreadQueries().build();
+        ArrayList<Events> events = new ArrayList<Events>(VeranderActivity.myAppDatabase.myDao().getEvents());
 
         Button DeleteButt = findViewById(R.id.VerwijderButt);
         Button ChangeButt = findViewById(R.id.VeranderButt);
+        TextView title = findViewById(R.id.VTitel);
+        TextView bTijd = findViewById(R.id.VBeginTijd);
+        TextView eTijd = findViewById(R.id.VEindTijd);
+        TextView date = findViewById(R.id.VDatum);
 
-        myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "Events" +
-                "db").allowMainThreadQueries().build();
+        for (int i = 0; i < events.size(); i = i + 1) {
+            Events CurrentEvent = events.get(i);
+            if (EventID == CurrentEvent.getId()){
+                title.setText(CurrentEvent.getTitel());
+                bTijd.setText(CurrentEvent.getStart_tijd());
+                eTijd.setText(CurrentEvent.getEind_tijd());
+                date.setText(CurrentEvent.getDatum());
+            }
+        }
 
-        //Show Item's title, time and date
 
         DeleteButt.setOnClickListener(new View.OnClickListener() {
             @Override
