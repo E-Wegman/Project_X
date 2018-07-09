@@ -33,7 +33,6 @@ public class AddEventsActivity extends AppCompatActivity implements DatePickerDi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_events);
-
         EventTitel = findViewById(R.id.textEventTitel);
         EventStartTijd = findViewById(R.id.textEventStartTijd);
         EventEindTijd= findViewById(R.id.textEventEindTijd);
@@ -44,6 +43,15 @@ public class AddEventsActivity extends AppCompatActivity implements DatePickerDi
         BEventBeginDatum = findViewById(R.id.buttonEventBeginDatum);
         gotoPeriodiek = findViewById(R.id.periodiekBtn);
         final Spinner prioriteitSpinner = findViewById(R.id.prioriteitSpinnerAdd);
+
+        String titel = getIntent().getStringExtra("Titel");
+        EventTitel.setText(titel);
+        String BTijd = getIntent().getStringExtra("BTijd");
+        EventStartTijd.setText(BTijd);
+        String ETijd = getIntent().getStringExtra("ETijd");
+        EventEindTijd.setText(ETijd);
+        String Date = getIntent().getStringExtra("Date");
+        EventDatum.setText(Date);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.prioriteitArray, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

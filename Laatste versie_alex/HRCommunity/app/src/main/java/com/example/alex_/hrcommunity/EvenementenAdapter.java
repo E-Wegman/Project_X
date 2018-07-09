@@ -39,11 +39,10 @@ public class EvenementenAdapter extends RecyclerView.Adapter<EvenementenAdapter.
                 public void onClick(View view) {
                     Intent intent = new Intent(itemView.getContext(), VeranderActivity.class);
                         int EventID;
-                        int EvId = 0;
+                        int EvId;
 
                     //get the one you clicked
                     getAdapterPosition();
-
                     EvId = getAdapterPosition();
                     EventID = getEvenements().get(EvId).getIDEvenement();
                     intent.putExtra("ID", EventID);

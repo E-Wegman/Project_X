@@ -59,6 +59,34 @@ public class VeranderActivity extends AppCompatActivity {
         });
 
         //Make Change on buttonclick
+        ChangeButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<Events> events = new ArrayList<Events>(VeranderActivity.myAppDatabase.myDao().getEvents());
+                int EventID = getIntent().getIntExtra("ID",0);
+                Intent intent = new Intent(v.getContext(), AddEventsActivity.class);
+                String VTitel = "";
+                String VBTijd = "";
+                String VETijd = "";
+                String VDate = "";
+                for (int i = 0; i < events.size(); i = i + 1) {
+                    Events CurrentEvent = events.get(i);
+                    if (EventID == CurrentEvent.getId()){
+                        VTitel = (CurrentEvent.getTitel());
+                        VBTijd = (CurrentEvent.getStart_tijd());
+                        VETijd= (CurrentEvent.getEind_tijd());
+                        VDate = (CurrentEvent.getDatum());
+                        MainActivity.myAppDatabase.myDao().deleteEvent(CurrentEvent);
+                    }
+                }
+                intent.putExtra("Title", VTitel);
+                intent.putExtra("BTijd", VBTijd);
+                intent.putExtra("ETijd", VETijd);
+                intent.putExtra("Date", VDate);
 
+                v.getContext().startActivity(intent);
+                finish();
+            }
+        });
     }
 }
