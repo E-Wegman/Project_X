@@ -47,7 +47,7 @@ public class Periodiek_Stap1 extends AppCompatActivity implements DatePickerDial
         Button nextButton = findViewById(R.id.nextButton);
         Button veranderEersteDag = findViewById(R.id.veranderEersteDag);
         cb = findViewById(R.id.cbVakantieCheck);
-        Spinner periodeLengte = (Spinner) findViewById(R.id.periodeLengte);
+        final Spinner periodeLengte = (Spinner) findViewById(R.id.periodeLengte);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.semesterLengthArray, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -58,8 +58,8 @@ public class Periodiek_Stap1 extends AppCompatActivity implements DatePickerDial
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (startDateString == null) {
-                    Toast.makeText(getApplicationContext(), "Vul de dagen in", Toast.LENGTH_SHORT).show();
+                if (startDateString == null || periodeLengteInt == 0) {
+                    Toast.makeText(getApplicationContext(), "Kan niet verdergaan, niet alle velden zijn ingevuld", Toast.LENGTH_SHORT).show();
                 } else if (cb.isChecked()) {
                     openStap1_5();
                 } else {

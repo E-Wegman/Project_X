@@ -66,7 +66,7 @@ public class Periodiek_Stap1_5 extends AppCompatActivity implements DatePickerDi
             @Override
             public void onClick(View v) {
                 if (vacationStartDateString == null || vacationLength == 0) {
-                    Toast.makeText(getApplicationContext(), "Vul de dagen in", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Kan niet verder, niet alle velden zijn ingevuld", Toast.LENGTH_SHORT).show();
                 } else {
                     open_stap2();
                 }

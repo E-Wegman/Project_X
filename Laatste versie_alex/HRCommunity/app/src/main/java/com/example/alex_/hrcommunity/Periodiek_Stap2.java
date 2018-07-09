@@ -112,8 +112,8 @@ public class Periodiek_Stap2 extends AppCompatActivity implements AdapterView.On
                 String lokaalNaamText = lokaalNaamTextView.getText().toString();
                 samenvoegingTitel = vakNaamText + " - " + lokaalNaamText;
 
-                if (vakNaamText.equals("") || lokaalNaamText.equals("") || startTimeView.equals("") || endTimeView.equals("")) {
-                    Toast.makeText(getApplicationContext(), "Vul de dagen in", Toast.LENGTH_SHORT).show();
+                if (vakNaamText.equals("") || lokaalNaamText.equals("") || startTimeView.equals("") || endTimeView.equals("") || prioriteitLengte == 0) {
+                    Toast.makeText(getApplicationContext(), "Kan niet verder, niet alle velden zijn ingevuld", Toast.LENGTH_SHORT).show();
                 } else {
                     toevoegen();
                 }
