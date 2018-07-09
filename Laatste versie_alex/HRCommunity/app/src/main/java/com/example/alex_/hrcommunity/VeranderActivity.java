@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.EventLog;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,22 +19,28 @@ public class VeranderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verander);
         int EventID = getIntent().getIntExtra("ID",0);
 
-        //Delete function in onCreate
+        Button DeleteButt = findViewById(R.id.VerwijderButt);
+        Button ChangeButt = findViewById(R.id.VeranderButt);
+
         myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "Events" +
                 "db").allowMainThreadQueries().build();
 
-        ArrayList<Events> events = new ArrayList<Events>(VeranderActivity.myAppDatabase.myDao().getEvents());
-
-        for (int i = 0; i < events.size(); i = i + 1) {
-            Events CurrentEvent = events.get(i);
-            if (EventID == CurrentEvent.getId()){
-                MainActivity.myAppDatabase.myDao().deleteEvent(CurrentEvent);
-            }
-        }
-
         //Show Item's title, time and date
 
-        //Make Delete on buttonclick
+        DeleteButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<Events> events = new ArrayList<Events>(VeranderActivity.myAppDatabase.myDao().getEvents());
+                int EventID = getIntent().getIntExtra("ID",0);
+                for (int i = 0; i < events.size(); i = i + 1) {
+                    Events CurrentEvent = events.get(i);
+                    if (EventID == CurrentEvent.getId()){
+                        MainActivity.myAppDatabase.myDao().deleteEvent(CurrentEvent);
+                    }
+                }
+                finish();
+            }
+        });
 
         //Make Change on buttonclick
 

@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static MyAppDatabase myAppDatabase;
 
-    private RecyclerView mRecyclerView;
+    public RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapater;
     private RecyclerView.LayoutManager mLayoutManager;
 
